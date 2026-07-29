@@ -30,6 +30,20 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 revealEls.forEach(el => io.observe(el));
 
+// Side dot nav — highlight the section currently in view
+const dotLinks = document.querySelectorAll('.dot-link');
+const dotSections = document.querySelectorAll('section[id]');
+const dotObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      dotLinks.forEach(d => d.classList.remove('active'));
+      const active = document.querySelector(`.dot-link[data-section="${entry.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { rootMargin: '-45% 0px -45% 0px' });
+dotSections.forEach(s => dotObserver.observe(s));
+
 // Lightbox
 const lightbox = document.getElementById('lightbox');
 const lightboxAvatar = document.getElementById('lightboxAvatar');

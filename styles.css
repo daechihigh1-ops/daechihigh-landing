@@ -88,15 +88,26 @@ img { max-width: 100%; display: block; }
   margin-right: auto;
 }
 .brand-accent { color: var(--gold-2); }
+/* Nav links live in a dropdown panel triggered by the hamburger — at every
+   viewport width, not just mobile — to keep the top bar minimal (logo + toggle only). */
 .nav-links {
-  display: flex;
-  gap: 22px;
+  display: none;
+  position: absolute;
+  top: 100%; left: 0; right: 0;
+  flex-direction: column;
+  gap: 0;
+  background: rgba(11,17,32,.98);
+  border-bottom: 1px solid var(--line);
+  padding: 8px 24px 16px;
   font-size: 14px;
   color: var(--text-dim);
 }
+.nav-links a { padding: 12px 0; border-top: 1px solid var(--line); }
+.nav-links a:first-child { border-top: none; }
 .nav-links a:hover { color: var(--text); }
+.nav-inner { position: relative; }
 .nav-toggle {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 5px;
   background: none;
@@ -107,6 +118,26 @@ img { max-width: 100%; display: block; }
 .nav-toggle span {
   width: 22px; height: 2px; background: var(--text);
 }
+
+/* ---------- Side scroll dot navigation ---------- */
+.dot-nav {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.dot-link {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #334155;
+  transition: background .2s ease, transform .2s ease;
+}
+.dot-link:hover { background: #64748b; }
+.dot-link.active { background: var(--gold-3); transform: scale(1.5); }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -473,20 +504,6 @@ img { max-width: 100%; display: block; }
   .eitem { grid-template-columns: 60px 1fr; gap: 18px; }
   .eitem-num { font-size: 28px; }
   .section-alt, .cta-final { clip-path: polygon(0 24px, 100% 0, 100% calc(100% - 24px), 0 100%); }
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%; left: 0; right: 0;
-    flex-direction: column;
-    gap: 0;
-    background: rgba(11,17,32,.98);
-    border-bottom: 1px solid var(--line);
-    padding: 8px 24px 16px;
-  }
-  .nav-links a { padding: 12px 0; border-top: 1px solid var(--line); }
-  .nav-links a:first-child { border-top: none; }
-  .nav-inner { position: relative; }
-  .nav-toggle { display: flex; }
   .stats-inner { grid-template-columns: repeat(2, 1fr); }
   .card-grid, .teacher-grid, .branch-grid { grid-template-columns: 1fr; }
   .cal-grid { grid-template-columns: repeat(2, 1fr); }
@@ -494,6 +511,7 @@ img { max-width: 100%; display: block; }
   .footer-branches { grid-template-columns: 1fr; }
   .section { padding: 72px 20px; }
   .hero { padding: 140px 20px 80px; }
+  .dot-nav { display: none; }
 }
 
 @media (max-width: 480px) {
