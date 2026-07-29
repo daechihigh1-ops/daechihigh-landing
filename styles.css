@@ -123,7 +123,55 @@ img { max-width: 100%; display: block; }
   background: radial-gradient(circle, rgba(201,162,75,.18), transparent 65%);
   pointer-events: none;
 }
-.hero-inner { position: relative; max-width: 760px; margin: 0 auto; }
+.hero-inner { position: relative; max-width: 1040px; margin: 0 auto; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+  text-align: left;
+}
+.hero-copy { max-width: 560px; }
+
+/* Brand mark */
+.hero-mark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+.mark-ring {
+  position: absolute;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,162,75,.35);
+}
+.mark-ring::before {
+  content: '';
+  position: absolute;
+  inset: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,162,75,.18);
+}
+.mark-text {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(64px, 9vw, 96px);
+  font-weight: 800;
+  transform: rotate(-6deg);
+  background: linear-gradient(135deg, var(--gold-1), var(--gold-2), var(--gold-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.mark-caption {
+  position: absolute;
+  bottom: 14px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--text-dim);
+}
 .badge {
   display: inline-block;
   font-size: 12px;
@@ -172,7 +220,10 @@ img { max-width: 100%; display: block; }
 
 /* ---------- Sections ---------- */
 .section { padding: 110px 24px; }
-.section-alt { background: var(--bg-alt); }
+.section-alt {
+  background: var(--bg-alt);
+  clip-path: polygon(0 44px, 100% 0, 100% calc(100% - 44px), 0 100%);
+}
 .section-inner { max-width: var(--max); margin: 0 auto; }
 .section-head { text-align: center; max-width: 620px; margin: 0 auto 56px; }
 .eyebrow {
@@ -185,28 +236,32 @@ img { max-width: 100%; display: block; }
 .section-head h2 { font-size: clamp(24px, 4vw, 34px); margin: 0 0 12px; font-weight: 800; }
 .section-sub { color: var(--text-dim); margin: 0; }
 
-/* ---------- Philosophy cards ---------- */
+/* ---------- Philosophy: editorial index list ---------- */
+.editorial-list { max-width: 880px; margin: 0 auto; }
+.eitem {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 32px;
+  align-items: start;
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+}
+.eitem:first-child { border-top: none; }
+.eitem-num {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.eitem-body h3 { margin: 0 0 10px; font-size: 20px; }
+.eitem-body p { margin: 0; color: var(--text-dim); font-size: 15px; max-width: 560px; }
+
+/* ---------- Other card grids (teachers/branches keep box style) ---------- */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-.pcard {
-  background: var(--bg-alt);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 28px 24px;
-  transition: transform .2s ease, border-color .2s ease;
-}
-.pcard:hover { transform: translateY(-4px); border-color: rgba(201,162,75,.4); }
-.pcard-icon {
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--gold-2);
-  margin-bottom: 14px;
-}
-.pcard h3 { margin: 0 0 10px; font-size: 18px; }
-.pcard p { margin: 0; color: var(--text-dim); font-size: 14px; }
 
 /* ---------- Director ---------- */
 .director-card {
@@ -323,11 +378,10 @@ img { max-width: 100%; display: block; }
 
 /* ---------- Final CTA ---------- */
 .cta-final {
-  padding: 110px 24px;
+  padding: 130px 24px;
   text-align: center;
   background: radial-gradient(circle at 50% 0%, rgba(201,162,75,.12), transparent 60%), var(--bg-alt);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  clip-path: polygon(0 44px, 100% 0, 100% calc(100% - 44px), 0 100%);
 }
 .cta-final h2 { font-size: clamp(24px, 4vw, 36px); margin: 0 0 16px; }
 .cta-final p { color: var(--text-dim); margin: 0 0 32px; }
@@ -413,6 +467,12 @@ img { max-width: 100%; display: block; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; text-align: center; }
+  .hero-copy { max-width: 100%; margin: 0 auto; }
+  .hero-mark { display: none; }
+  .eitem { grid-template-columns: 60px 1fr; gap: 18px; }
+  .eitem-num { font-size: 28px; }
+  .section-alt, .cta-final { clip-path: polygon(0 24px, 100% 0, 100% calc(100% - 24px), 0 100%); }
   .nav-links {
     display: none;
     position: absolute;
