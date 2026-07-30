@@ -353,6 +353,126 @@ img { max-width: 100%; display: block; }
   border-radius: 100px;
 }
 
+/* ---------- Why cards ---------- */
+.why-grid { grid-template-columns: repeat(3, 1fr); }
+.wcard {
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.wcard:hover { transform: translateY(-4px); border-color: rgba(201,162,75,.4); }
+.wcard-icon {
+  width: 52px; height: 52px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: rgba(201,162,75,.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+}
+.wcard h3 { margin: 0 0 10px; font-size: 17px; }
+.wcard p { margin: 0; color: var(--text-dim); font-size: 14px; }
+
+/* ---------- Director mission block ---------- */
+.mission-block {
+  max-width: 640px;
+  margin: 56px auto 0;
+  text-align: center;
+  border-top: 1px solid var(--line);
+  padding-top: 48px;
+}
+.mission-title { font-size: 22px; margin: 0 0 20px; }
+.mission-greeting, .mission-statement, .mission-closing {
+  color: var(--text-dim);
+  margin: 0 0 18px;
+  font-size: 15px;
+}
+.mission-goals {
+  text-align: left;
+  color: var(--text-dim);
+  font-size: 14px;
+  margin: 0 0 18px;
+  padding-left: 20px;
+  display: inline-block;
+}
+.mission-goals li { margin-bottom: 8px; }
+
+/* ---------- Teacher tagline ---------- */
+.teacher-tagline {
+  margin: 14px 0 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* ---------- FAQ accordion ---------- */
+.faq-list { max-width: 720px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 22px 4px;
+  cursor: pointer;
+  text-align: left;
+}
+.faq-plus { color: var(--gold-2); font-size: 20px; transition: transform .2s ease; }
+.faq-item.open .faq-plus { transform: rotate(45deg); }
+.faq-a {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows .25s ease;
+}
+.faq-item.open .faq-a { grid-template-rows: 1fr; }
+.faq-a p { min-height: 0; overflow: hidden; margin: 0 4px 20px; color: var(--text-dim); font-size: 14px; }
+
+/* ---------- Map / location ---------- */
+.map-grid { grid-template-columns: repeat(3, 1fr); }
+.map-card {
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  transition: transform .2s ease, border-color .2s ease;
+}
+.map-card:hover { transform: translateY(-4px); border-color: rgba(201,162,75,.4); }
+.map-placeholder {
+  aspect-ratio: 4 / 3;
+  display: flex; align-items: center; justify-content: center;
+  background: repeating-linear-gradient(45deg, var(--bg-alt), var(--bg-alt) 10px, var(--bg) 10px, var(--bg) 20px);
+  color: var(--text-dim);
+  font-size: 13px;
+}
+.map-card-label { padding: 14px; font-size: 14px; font-weight: 600; text-align: center; background: var(--bg); }
+
+/* ---------- Kakao banner ---------- */
+.kakao-banner {
+  padding: 28px 24px;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.kakao-banner-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.kakao-banner-text strong { display: block; font-size: 16px; margin-bottom: 4px; }
+.kakao-banner-text span { color: var(--text-dim); font-size: 13px; }
+
 /* ---------- Branches ---------- */
 .branch-grid { grid-template-columns: repeat(3, 1fr); }
 .bcard {
@@ -406,6 +526,23 @@ img { max-width: 100%; display: block; }
 }
 .cal-month { color: var(--gold-2); font-weight: 800; font-size: 14px; margin-bottom: 8px; }
 .cal-desc { color: var(--text-dim); font-size: 13px; }
+
+.cal-tool-link {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: linear-gradient(90deg, rgba(201,162,75,.1), rgba(201,162,75,.03));
+  border: 1px solid rgba(201,162,75,.3);
+  border-radius: 12px;
+  padding: 20px 24px;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.cal-tool-link:hover { transform: translateY(-2px); border-color: rgba(201,162,75,.55); }
+.cal-tool-text strong { display: block; font-size: 15px; margin-bottom: 4px; }
+.cal-tool-text span { color: var(--text-dim); font-size: 13px; }
+.cal-tool-arrow { color: var(--gold-2); font-size: 20px; flex-shrink: 0; }
 
 /* ---------- Final CTA ---------- */
 .cta-final {
@@ -505,7 +642,7 @@ img { max-width: 100%; display: block; }
   .eitem-num { font-size: 28px; }
   .section-alt, .cta-final { clip-path: polygon(0 24px, 100% 0, 100% calc(100% - 24px), 0 100%); }
   .stats-inner { grid-template-columns: repeat(2, 1fr); }
-  .card-grid, .teacher-grid, .branch-grid { grid-template-columns: 1fr; }
+  .card-grid, .teacher-grid, .branch-grid, .why-grid, .map-grid { grid-template-columns: 1fr; }
   .cal-grid { grid-template-columns: repeat(2, 1fr); }
   .director-card { flex-direction: column; text-align: center; padding: 32px 24px; }
   .footer-branches { grid-template-columns: 1fr; }

@@ -44,6 +44,13 @@ const dotObserver = new IntersectionObserver((entries) => {
 }, { rootMargin: '-45% 0px -45% 0px' });
 dotSections.forEach(s => dotObserver.observe(s));
 
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.faq-item').classList.toggle('open');
+  });
+});
+
 // Lightbox
 const lightbox = document.getElementById('lightbox');
 const lightboxAvatar = document.getElementById('lightboxAvatar');
