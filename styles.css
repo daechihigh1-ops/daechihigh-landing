@@ -308,18 +308,15 @@ img { max-width: 100%; display: block; }
 /* ---------- Director ---------- */
 .director-card {
   display: flex;
-  align-items: flex-start;
-  gap: 44px;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 44px;
+  align-items: center;
+  gap: 56px;
 }
 .director-photo-wrap {
-  flex-shrink: 0;
-  width: 260px;
+  flex: 0 0 auto;
+  width: 42%;
+  max-width: 420px;
   cursor: pointer;
-  transition: transform .2s ease;
+  transition: transform .25s ease;
 }
 .director-photo-wrap:hover { transform: translateY(-6px); }
 .director-photo {
@@ -328,20 +325,37 @@ img { max-width: 100%; display: block; }
   object-fit: cover;
   border-radius: var(--radius);
   border: 1px solid rgba(201,162,75,.3);
-  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  box-shadow: 0 20px 44px rgba(0,0,0,.45);
+  filter: brightness(1.22) contrast(1.04) saturate(1.05);
 }
-.director-body h3 { font-size: 26px; margin: 0 0 6px; }
-.director-role { color: var(--gold-2); font-size: 14px; margin: 0 0 16px; font-weight: 600; }
-.director-bio { color: var(--text-dim); margin: 0 0 22px; }
+.director-body { flex: 1 1 auto; min-width: 0; }
+.director-body h3 { font-size: 28px; margin: 0 0 6px; }
+.director-role { color: var(--gold-2); font-size: 14px; margin: 0 0 22px; font-weight: 600; }
+.director-bio {
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0 0 28px;
+  padding-left: 20px;
+  border-left: 2px solid var(--gold-3);
+}
+.director-facts-label {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
 .director-facts {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0 24px;
+  gap: 0 20px;
 }
 .director-facts li {
   color: var(--text-dim);
-  font-size: 14px;
-  padding: 10px 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  padding: 6px 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -726,8 +740,9 @@ img { max-width: 100%; display: block; }
   .card-grid, .teacher-grid, .branch-grid, .why-grid, .map-grid { grid-template-columns: 1fr; }
   .facility-grid { grid-template-columns: repeat(2, 1fr); }
   .cal-grid { grid-template-columns: repeat(2, 1fr); }
-  .director-card { flex-direction: column; align-items: center; text-align: center; padding: 32px 24px; }
-  .director-photo-wrap { width: 200px; }
+  .director-card { flex-direction: column; align-items: center; text-align: center; }
+  .director-photo-wrap { width: 70%; max-width: 260px; }
+  .director-bio { text-align: left; }
   .director-facts { grid-template-columns: 1fr; text-align: left; }
   .footer-branches { grid-template-columns: 1fr; }
   .section { padding: 72px 20px; }
