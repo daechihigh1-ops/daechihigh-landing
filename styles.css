@@ -19,7 +19,8 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -58,7 +59,7 @@ img { max-width: 100%; display: block; }
   color: #cbd5e1;
 }
 .btn-outline:hover { border-color: var(--gold-3); color: var(--gold-1); }
-.btn-sm { padding: 9px 18px; font-size: 13px; }
+.btn-sm { padding: 9px 18px; font-size: 14px; }
 
 /* ---------- Nav ---------- */
 .nav {
@@ -99,7 +100,7 @@ img { max-width: 100%; display: block; }
   background: rgba(11,17,32,.98);
   border-bottom: 1px solid var(--line);
   padding: 8px 24px 16px;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-dim);
 }
 .nav-links a { padding: 12px 0; border-top: 1px solid var(--line); }
@@ -190,6 +191,7 @@ img { max-width: 100%; display: block; }
   z-index: 1;
   font-size: clamp(64px, 9vw, 96px);
   font-weight: 800;
+  letter-spacing: 6px;
   transform: rotate(-6deg);
   background: linear-gradient(135deg, var(--gold-1), var(--gold-2), var(--gold-3));
   -webkit-background-clip: text;
@@ -199,13 +201,13 @@ img { max-width: 100%; display: block; }
 .mark-caption {
   position: absolute;
   bottom: 14px;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 3px;
   color: var(--text-dim);
 }
 .badge {
   display: inline-block;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 1.5px;
   color: var(--gold-2);
   border: 1px solid rgba(201,162,75,.35);
@@ -220,7 +222,7 @@ img { max-width: 100%; display: block; }
   margin: 0 0 20px;
 }
 .hero-sub {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-dim);
   margin: 0 0 36px;
 }
@@ -231,24 +233,6 @@ img { max-width: 100%; display: block; }
   flex-wrap: wrap;
 }
 
-/* ---------- Stats ---------- */
-.stats { padding: 0 24px 100px; }
-.stats-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  background: var(--bg-alt);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 36px 24px;
-}
-.stat { text-align: center; }
-.stat-num { font-size: 34px; font-weight: 800; }
-.stat-unit { font-size: 18px; }
-.stat-label { font-size: 13px; color: var(--text-dim); margin-top: 6px; }
-
 /* ---------- Sections ---------- */
 .section { padding: 110px 24px; }
 .section-alt {
@@ -258,14 +242,14 @@ img { max-width: 100%; display: block; }
 .section-inner { max-width: var(--max); margin: 0 auto; }
 .section-head { text-align: center; max-width: 620px; margin: 0 auto 56px; }
 .eyebrow {
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 2px;
   color: var(--gold-2);
   font-weight: 700;
   margin-bottom: 12px;
 }
-.section-head h2 { font-size: clamp(24px, 4vw, 34px); margin: 0 0 12px; font-weight: 800; }
-.section-sub { color: var(--text-dim); margin: 0; }
+.section-head h2 { font-size: clamp(26px, 4vw, 36px); margin: 0 0 12px; font-weight: 800; }
+.section-sub { color: var(--text-dim); margin: 0; font-size: 17px; }
 
 /* ---------- Philosophy: editorial index list ---------- */
 .editorial-list { max-width: 880px; margin: 0 auto; }
@@ -284,8 +268,8 @@ img { max-width: 100%; display: block; }
   line-height: 1;
   font-variant-numeric: tabular-nums;
 }
-.eitem-body h3 { margin: 0 0 10px; font-size: 20px; }
-.eitem-body p { margin: 0; color: var(--text-dim); font-size: 15px; max-width: 560px; }
+.eitem-body h3 { margin: 0 0 10px; font-size: 21px; }
+.eitem-body p { margin: 0; color: var(--text-dim); font-size: 16px; max-width: 560px; }
 
 /* ---------- Other card grids (teachers/branches keep box style) ---------- */
 .card-grid {
@@ -305,11 +289,11 @@ img { max-width: 100%; display: block; }
   padding: 44px;
 }
 .director-body h3 { font-size: 24px; margin: 0 0 6px; }
-.director-role { color: var(--gold-2); font-size: 13px; margin: 0 0 16px; font-weight: 600; }
+.director-role { color: var(--gold-2); font-size: 14px; margin: 0 0 16px; font-weight: 600; }
 .director-bio { color: var(--text-dim); margin: 0 0 18px; }
 .director-facts li {
   color: var(--text-dim);
-  font-size: 14px;
+  font-size: 15px;
   padding: 8px 0;
   border-top: 1px solid var(--line);
 }
@@ -319,15 +303,17 @@ img { max-width: 100%; display: block; }
 .avatar-wrap { flex-shrink: 0; cursor: pointer; transition: transform .2s ease; }
 .avatar-wrap:hover { transform: translateY(-6px); }
 .avatar {
-  width: 92px; height: 92px;
+  width: 112px; height: 112px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--gold-1), var(--gold-3));
   color: #241a05;
   display: flex; align-items: center; justify-content: center;
-  font-size: 30px; font-weight: 800;
+  font-size: 36px; font-weight: 800;
+  overflow: hidden;
 }
-.avatar-lg { width: 140px; height: 140px; font-size: 44px; }
-.avatar-xl { width: 160px; height: 160px; font-size: 52px; margin: 0 auto 20px; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.avatar-lg { width: 176px; height: 176px; font-size: 52px; }
+.avatar-xl { width: 200px; height: 200px; font-size: 60px; margin: 0 auto 20px; }
 
 /* ---------- Teachers ---------- */
 .teacher-grid { grid-template-columns: repeat(3, 1fr); }
@@ -342,11 +328,11 @@ img { max-width: 100%; display: block; }
 }
 .tcard:hover { transform: translateY(-6px); border-color: rgba(201,162,75,.4); }
 .tcard .avatar-wrap { margin: 0 auto 18px; }
-.tcard h3 { margin: 0 0 6px; font-size: 17px; }
-.tcard-role { color: var(--text-dim); font-size: 13px; margin: 0 0 14px; }
+.tcard h3 { margin: 0 0 6px; font-size: 18px; }
+.tcard-role { color: var(--text-dim); font-size: 14px; margin: 0 0 14px; }
 .tag-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
 .tag {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--gold-2);
   border: 1px solid rgba(201,162,75,.3);
   padding: 4px 10px;
@@ -372,8 +358,8 @@ img { max-width: 100%; display: block; }
   display: flex; align-items: center; justify-content: center;
   font-size: 22px;
 }
-.wcard h3 { margin: 0 0 10px; font-size: 17px; }
-.wcard p { margin: 0; color: var(--text-dim); font-size: 14px; }
+.wcard h3 { margin: 0 0 10px; font-size: 18px; }
+.wcard p { margin: 0; color: var(--text-dim); font-size: 15px; }
 
 /* ---------- Director mission block ---------- */
 .mission-block {
@@ -383,16 +369,16 @@ img { max-width: 100%; display: block; }
   border-top: 1px solid var(--line);
   padding-top: 48px;
 }
-.mission-title { font-size: 22px; margin: 0 0 20px; }
+.mission-title { font-size: 23px; margin: 0 0 20px; }
 .mission-greeting, .mission-statement, .mission-closing {
   color: var(--text-dim);
   margin: 0 0 18px;
-  font-size: 15px;
+  font-size: 16px;
 }
 .mission-goals {
   text-align: left;
   color: var(--text-dim);
-  font-size: 14px;
+  font-size: 15px;
   margin: 0 0 18px;
   padding-left: 20px;
   display: inline-block;
@@ -402,7 +388,7 @@ img { max-width: 100%; display: block; }
 /* ---------- Teacher tagline ---------- */
 .teacher-tagline {
   margin: 14px 0 0;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
 }
 
@@ -418,13 +404,13 @@ img { max-width: 100%; display: block; }
   border: none;
   color: var(--text);
   font-family: inherit;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
   padding: 22px 4px;
   cursor: pointer;
   text-align: left;
 }
-.faq-plus { color: var(--gold-2); font-size: 20px; transition: transform .2s ease; }
+.faq-plus { color: var(--gold-2); font-size: 22px; transition: transform .2s ease; }
 .faq-item.open .faq-plus { transform: rotate(45deg); }
 .faq-a {
   display: grid;
@@ -433,7 +419,23 @@ img { max-width: 100%; display: block; }
   transition: grid-template-rows .25s ease;
 }
 .faq-item.open .faq-a { grid-template-rows: 1fr; }
-.faq-a p { min-height: 0; overflow: hidden; margin: 0 4px 20px; color: var(--text-dim); font-size: 14px; }
+.faq-a p { min-height: 0; overflow: hidden; margin: 0 4px 20px; color: var(--text-dim); font-size: 15px; }
+
+/* ---------- Facility gallery ---------- */
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.facility-photo {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: repeating-linear-gradient(45deg, var(--bg-alt), var(--bg-alt) 10px, var(--bg) 10px, var(--bg) 20px);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-dim);
+  font-size: 14px;
+}
 
 /* ---------- Map / location ---------- */
 .map-grid { grid-template-columns: repeat(3, 1fr); }
@@ -452,7 +454,7 @@ img { max-width: 100%; display: block; }
   color: var(--text-dim);
   font-size: 13px;
 }
-.map-card-label { padding: 14px; font-size: 14px; font-weight: 600; text-align: center; background: var(--bg); }
+.map-card-label { padding: 14px; font-size: 15px; font-weight: 600; text-align: center; background: var(--bg); }
 
 /* ---------- Kakao banner ---------- */
 .kakao-banner {
@@ -470,8 +472,8 @@ img { max-width: 100%; display: block; }
   gap: 16px;
   flex-wrap: wrap;
 }
-.kakao-banner-text strong { display: block; font-size: 16px; margin-bottom: 4px; }
-.kakao-banner-text span { color: var(--text-dim); font-size: 13px; }
+.kakao-banner-text strong { display: block; font-size: 17px; margin-bottom: 4px; }
+.kakao-banner-text span { color: var(--text-dim); font-size: 14px; }
 
 /* ---------- Branches ---------- */
 .branch-grid { grid-template-columns: repeat(3, 1fr); }
@@ -491,12 +493,12 @@ img { max-width: 100%; display: block; }
   border-radius: 100px;
   margin-bottom: 14px;
 }
-.bcard h3 { margin: 0 0 8px; font-size: 19px; }
-.bcard-sub { color: var(--text-dim); font-weight: 400; font-size: 14px; }
-.bcard-desc { color: var(--text-dim); font-size: 14px; margin: 0 0 18px; }
+.bcard h3 { margin: 0 0 8px; font-size: 20px; }
+.bcard-sub { color: var(--text-dim); font-weight: 400; font-size: 15px; }
+.bcard-desc { color: var(--text-dim); font-size: 15px; margin: 0 0 18px; }
 .school-label {
   display: block;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 1px;
   color: var(--text-dim);
   margin-bottom: 10px;
@@ -504,7 +506,7 @@ img { max-width: 100%; display: block; }
 }
 .school-tags { display: flex; flex-wrap: wrap; gap: 7px; }
 .school-tag {
-  font-size: 12px;
+  font-size: 13px;
   color: #cbd5e1;
   background: var(--bg-alt);
   border: 1px solid var(--line);
@@ -524,8 +526,8 @@ img { max-width: 100%; display: block; }
   border-radius: 10px;
   padding: 20px 16px;
 }
-.cal-month { color: var(--gold-2); font-weight: 800; font-size: 14px; margin-bottom: 8px; }
-.cal-desc { color: var(--text-dim); font-size: 13px; }
+.cal-month { color: var(--gold-2); font-weight: 800; font-size: 15px; margin-bottom: 8px; }
+.cal-desc { color: var(--text-dim); font-size: 14px; }
 
 .cal-tool-link {
   margin-top: 20px;
@@ -540,8 +542,8 @@ img { max-width: 100%; display: block; }
   transition: transform .2s ease, border-color .2s ease;
 }
 .cal-tool-link:hover { transform: translateY(-2px); border-color: rgba(201,162,75,.55); }
-.cal-tool-text strong { display: block; font-size: 15px; margin-bottom: 4px; }
-.cal-tool-text span { color: var(--text-dim); font-size: 13px; }
+.cal-tool-text strong { display: block; font-size: 16px; margin-bottom: 4px; }
+.cal-tool-text span { color: var(--text-dim); font-size: 14px; }
 .cal-tool-arrow { color: var(--gold-2); font-size: 20px; flex-shrink: 0; }
 
 /* ---------- Final CTA ---------- */
@@ -564,32 +566,36 @@ img { max-width: 100%; display: block; }
   gap: 24px;
   margin-bottom: 28px;
 }
-.footer-branches strong { display: block; margin-bottom: 6px; font-size: 14px; }
-.footer-branches p { margin: 0; color: var(--text-dim); font-size: 13px; }
-.footer-fine { color: #64748b; font-size: 12px; border-top: 1px solid var(--line); padding-top: 24px; margin: 0; }
+.footer-branches strong { display: block; margin-bottom: 6px; font-size: 15px; }
+.footer-branches p { margin: 0; color: var(--text-dim); font-size: 14px; }
+.footer-fine { color: #64748b; font-size: 13px; border-top: 1px solid var(--line); padding-top: 24px; margin: 0; }
 
 /* ---------- Floating CTA stack ---------- */
 .float-stack {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 18px;
+  bottom: 18px;
   z-index: 90;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: 10px;
 }
 .float-btn {
-  width: 52px; height: 52px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 100px;
   box-shadow: 0 6px 18px rgba(0,0,0,.35);
   transition: transform .15s ease;
 }
-.float-btn:hover { transform: scale(1.08); }
-.float-kakao { background: #fee500; }
-.float-phone { background: linear-gradient(135deg, var(--gold-1), var(--gold-3)); }
-.float-consult { background: #1e293b; border: 1px solid var(--line); }
+.float-btn:hover { transform: translateX(-4px); }
+.float-icon { font-size: 18px; line-height: 1; }
+.float-label { font-size: 14px; font-weight: 700; white-space: nowrap; }
+.float-kakao { background: #fee500; color: #3c1e1e; }
+.float-phone { background: linear-gradient(90deg, var(--gold-1), var(--gold-3)); color: #241a05; }
+.float-consult { background: #1e293b; border: 1px solid var(--line); color: var(--text); }
 
 /* ---------- Lightbox ---------- */
 .lightbox {
@@ -623,7 +629,7 @@ img { max-width: 100%; display: block; }
   cursor: pointer;
 }
 .lightbox-content h3 { margin: 0 0 6px; }
-.lightbox-content p { margin: 0; color: var(--text-dim); font-size: 14px; }
+.lightbox-content p { margin: 0; color: var(--text-dim); font-size: 15px; }
 
 /* ---------- Reveal animation ---------- */
 .reveal {
@@ -641,14 +647,17 @@ img { max-width: 100%; display: block; }
   .eitem { grid-template-columns: 60px 1fr; gap: 18px; }
   .eitem-num { font-size: 28px; }
   .section-alt, .cta-final { clip-path: polygon(0 24px, 100% 0, 100% calc(100% - 24px), 0 100%); }
-  .stats-inner { grid-template-columns: repeat(2, 1fr); }
   .card-grid, .teacher-grid, .branch-grid, .why-grid, .map-grid { grid-template-columns: 1fr; }
+  .facility-grid { grid-template-columns: repeat(2, 1fr); }
   .cal-grid { grid-template-columns: repeat(2, 1fr); }
   .director-card { flex-direction: column; text-align: center; padding: 32px 24px; }
   .footer-branches { grid-template-columns: 1fr; }
   .section { padding: 72px 20px; }
   .hero { padding: 140px 20px 80px; }
   .dot-nav { display: none; }
+  .cal-tool-link { flex-direction: column; align-items: flex-start; }
+  .float-label { display: none; }
+  .float-btn { padding: 14px; border-radius: 50%; }
 }
 
 @media (max-width: 480px) {
