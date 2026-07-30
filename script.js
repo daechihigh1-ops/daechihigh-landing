@@ -98,3 +98,36 @@ document.addEventListener('keydown', (e) => {
     if (resultsModal) resultsModal.classList.remove('open');
   }
 });
+
+// Carousels (facility photos per branch, teacher profiles)
+document.querySelectorAll('[data-carousel]').forEach(carousel => {
+  const track = carousel.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const prevBtn = carousel.querySelector('.carousel-prev');
+  const nextBtn = carousel.querySelector('.carousel-next');
+  const dotsWrap = carousel.querySelector('.carousel-dots');
+
+  slides.forEach((slide, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot';
+    dot.setAttribute('aria-label', `${i + 1}번째로 이동`);
+    dot.addEventListener('click', () => {
+      track.scrollTo({ left: slide.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+    });
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  function updateActive() {
+    let closest = 0, closestDist = Infinity;
+    slides.forEach((slide, i) => {
+      const dist = Math.abs(slide.offsetLeft - track.offsetLeft - track.scrollLeft);
+      if (dist < closestDist) { closestDist = dist; closest = i; }
+    });
+    dots.forEach((d, i) => d.classList.toggle('active', i === closest));
+  }
+  track.addEventListener('scroll', () => window.requestAnimationFrame(updateActive));
+  prevBtn.addEventListener('click', () => track.scrollBy({ left: -(track.clientWidth * 0.8), behavior: 'smooth' }));
+  nextBtn.addEventListener('click', () => track.scrollBy({ left: track.clientWidth * 0.8, behavior: 'smooth' }));
+  updateActive();
+});
