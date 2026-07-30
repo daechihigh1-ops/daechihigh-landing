@@ -65,6 +65,124 @@ while (qi < qHead.length) {
   }
 }
 
+// Clean up thin "leak" channels (where a bright highlight on the diamond was
+// close enough in color to get mistaken for background, biting a notch into
+// the shape): morphological opening (erode then dilate) the background mask,
+// then keep only the component still connected to the border. Anything that
+// gets severed by the erosion — like a leak's narrow connecting channel — is
+// reclassified back to foreground.
+// Out-of-bounds neighbors count as background (mask=1) rather than
+// automatically failing the erosion — the crop's own edge is guaranteed
+// background (the diamond never touches it), so treating "off the edge of
+// the image" as "not background" would otherwise erode a false moat all the
+// way around the border and cut the interior off from any border-seeded fill.
+function erode(mask, w, h, r) {
+  const tmp = new Uint8Array(w * h);
+  const out = new Uint8Array(w * h);
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      let v = 1;
+      for (let dx = -r; dx <= r; dx++) {
+        const nx = x + dx;
+        if (nx >= 0 && nx < w && !mask[y * w + nx]) { v = 0; break; }
+      }
+      tmp[y * w + x] = v;
+    }
+  }
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      let v = 1;
+      for (let dy = -r; dy <= r; dy++) {
+        const ny = y + dy;
+        if (ny >= 0 && ny < h && !tmp[ny * w + x]) { v = 0; break; }
+      }
+      out[y * w + x] = v;
+    }
+  }
+  return out;
+}
+function dilate(mask, w, h, r) {
+  const tmp = new Uint8Array(w * h);
+  const out = new Uint8Array(w * h);
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      let v = 0;
+      for (let dx = -r; dx <= r; dx++) {
+        const nx = x + dx;
+        if (nx >= 0 && nx < w && mask[y * w + nx]) { v = 1; break; }
+      }
+      tmp[y * w + x] = v;
+    }
+  }
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      let v = 0;
+      for (let dy = -r; dy <= r; dy++) {
+        const ny = y + dy;
+        if (ny >= 0 && ny < h && tmp[ny * w + x]) { v = 1; break; }
+      }
+      out[y * w + x] = v;
+    }
+  }
+  return out;
+}
+
+const bgBool = new Uint8Array(cw * ch);
+for (let i = 0; i < bgBool.length; i++) bgBool[i] = bg[i] ? 1 : 0;
+// First close (dilate-then-erode) with a small radius to fill in the tiny
+// non-background specks the scattered gold sparkle dots leave in the mask —
+// otherwise the later opening amplifies each into a visible blob.
+const closed = erode(dilate(bgBool, cw, ch, 2), cw, ch, 2);
+const R = 5;
+const opened = dilate(erode(closed, cw, ch, R), cw, ch, R);
+
+// Connected-component fill from the border on the opened mask; anything not
+// reached (severed islands, i.e. former leaks) becomes foreground.
+const finalBg = new Uint8Array(cw * ch);
+const cQueue = [];
+const seedIfOpen = (x, y) => {
+  const p = y * cw + x;
+  if (opened[p] && !finalBg[p]) { finalBg[p] = 1; cQueue.push(p); }
+};
+for (let x = 0; x < cw; x++) { seedIfOpen(x, 0); seedIfOpen(x, ch - 1); }
+for (let y = 0; y < ch; y++) { seedIfOpen(0, y); seedIfOpen(cw - 1, y); }
+let ci = 0;
+while (ci < cQueue.length) {
+  const p = cQueue[ci++];
+  const x = p % cw, y = (p / cw) | 0;
+  const nb = [[x + 1, y], [x - 1, y], [x, y + 1], [x, y - 1]];
+  for (const [nx, ny] of nb) {
+    if (nx < 0 || ny < 0 || nx >= cw || ny >= ch) continue;
+    const np = ny * cw + nx;
+    if (finalBg[np] || !opened[np]) continue;
+    finalBg[np] = 1;
+    cQueue.push(np);
+  }
+}
+for (let i = 0; i < bg.length; i++) bg[i] = finalBg[i] ? 1 : 0;
+
+// The diamond's bright highlight on its upper-left facet is, by design, close
+// enough to the background's own light glow that no color threshold can tell
+// them apart — the two are literally the same connected region by color, which
+// is why no amount of threshold/morphology tuning can separate them: they're
+// one contiguous blob. But the diamond itself is left/right mirror-symmetric
+// and the right facet has no such highlight, so borrow its (correct) shape to
+// repair the left side instead of fighting the color ambiguity directly.
+// True center measured from unaffected lower rows (min/max foreground x),
+// not assumed as the crop's midpoint — the logo isn't perfectly centered.
+const centerX = 504.0;
+const mirrorBox = { x0: 230, y0: 190, x1: Math.round(centerX), y1: 430 };
+let mirrorFixed = 0;
+for (let y = mirrorBox.y0; y < mirrorBox.y1; y++) {
+  for (let x = mirrorBox.x0; x < mirrorBox.x1; x++) {
+    const mx = Math.round(2 * centerX - x);
+    if (mx < 0 || mx >= cw) continue;
+    const p = y * cw + x, mp = y * cw + mx;
+    if (bg[p] === 1 && bg[mp] === 0) { bg[p] = 0; mirrorFixed++; }
+  }
+}
+console.log('mirror-repaired', mirrorFixed, 'px');
+
 const out = new PNG({ width: cw, height: ch });
 for (let y = 0; y < ch; y++) {
   for (let x = 0; x < cw; x++) {
