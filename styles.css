@@ -308,23 +308,42 @@ img { max-width: 100%; display: block; }
 /* ---------- Director ---------- */
 .director-card {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 44px;
   background: var(--bg);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 44px;
 }
-.director-body h3 { font-size: 24px; margin: 0 0 6px; }
+.director-photo-wrap {
+  flex-shrink: 0;
+  width: 260px;
+  cursor: pointer;
+  transition: transform .2s ease;
+}
+.director-photo-wrap:hover { transform: translateY(-6px); }
+.director-photo {
+  width: 100%;
+  aspect-ratio: 2079 / 2350;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid rgba(201,162,75,.3);
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+.director-body h3 { font-size: 26px; margin: 0 0 6px; }
 .director-role { color: var(--gold-2); font-size: 14px; margin: 0 0 16px; font-weight: 600; }
-.director-bio { color: var(--text-dim); margin: 0 0 18px; }
+.director-bio { color: var(--text-dim); margin: 0 0 22px; }
+.director-facts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 24px;
+}
 .director-facts li {
   color: var(--text-dim);
-  font-size: 15px;
-  padding: 8px 0;
-  border-top: 1px solid var(--line);
+  font-size: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
 }
-.director-facts li:first-child { border-top: none; }
 
 /* ---------- Avatars ---------- */
 .avatar-wrap { flex-shrink: 0; cursor: pointer; transition: transform .2s ease; }
@@ -707,7 +726,9 @@ img { max-width: 100%; display: block; }
   .card-grid, .teacher-grid, .branch-grid, .why-grid, .map-grid { grid-template-columns: 1fr; }
   .facility-grid { grid-template-columns: repeat(2, 1fr); }
   .cal-grid { grid-template-columns: repeat(2, 1fr); }
-  .director-card { flex-direction: column; text-align: center; padding: 32px 24px; }
+  .director-card { flex-direction: column; align-items: center; text-align: center; padding: 32px 24px; }
+  .director-photo-wrap { width: 200px; }
+  .director-facts { grid-template-columns: 1fr; text-align: left; }
   .footer-branches { grid-template-columns: 1fr; }
   .section { padding: 72px 20px; }
   .hero { padding: 140px 20px 80px; }

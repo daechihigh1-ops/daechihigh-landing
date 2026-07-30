@@ -72,8 +72,13 @@ document.querySelectorAll('.lightbox-trigger').forEach(trigger => {
   trigger.addEventListener('click', () => {
     const name = trigger.dataset.name || '';
     const role = trigger.dataset.role || '';
-    const avatarEl = trigger.querySelector('.avatar');
-    lightboxAvatar.textContent = avatarEl ? avatarEl.textContent : '';
+    const photo = trigger.dataset.photo;
+    if (photo) {
+      lightboxAvatar.innerHTML = `<img src="${photo}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">`;
+    } else {
+      const avatarEl = trigger.querySelector('.avatar');
+      lightboxAvatar.textContent = avatarEl ? avatarEl.textContent : '';
+    }
     lightboxName.textContent = name;
     lightboxRole.textContent = role;
     lightbox.classList.add('open');
