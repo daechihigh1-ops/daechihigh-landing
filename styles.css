@@ -369,21 +369,25 @@ img { max-width: 100%; display: block; }
   border-top: 1px solid var(--line);
   padding-top: 48px;
 }
-.mission-title { font-size: 23px; margin: 0 0 20px; }
-.mission-greeting, .mission-statement, .mission-closing {
+.mission-title { font-size: 23px; margin: 0 0 24px; }
+.mission-quote {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.6;
+  margin: 0 0 28px;
+}
+.mission-body {
   color: var(--text-dim);
   margin: 0 0 18px;
   font-size: 16px;
+  line-height: 1.8;
 }
-.mission-goals {
-  text-align: left;
-  color: var(--text-dim);
-  font-size: 15px;
-  margin: 0 0 18px;
-  padding-left: 20px;
-  display: inline-block;
+.mission-signature {
+  margin: 24px 0 0;
+  font-size: 14px;
+  color: var(--gold-2);
+  font-weight: 600;
 }
-.mission-goals li { margin-bottom: 8px; }
 
 /* ---------- Teacher tagline ---------- */
 .teacher-tagline {
