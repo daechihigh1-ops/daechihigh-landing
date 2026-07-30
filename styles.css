@@ -167,35 +167,67 @@ img { max-width: 100%; display: block; }
 
 /* Brand mark */
 .hero-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  min-height: 360px;
+}
+.mark-visual {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 300px;
+  width: 300px;
+  height: 300px;
 }
 .mark-ring {
   position: absolute;
-  width: 240px; height: 240px;
+  inset: 0;
   border-radius: 50%;
   border: 1px solid rgba(201,162,75,.35);
 }
 .mark-ring::before {
   content: '';
   position: absolute;
-  inset: 22px;
+  inset: 26px;
   border-radius: 50%;
   border: 1px solid rgba(201,162,75,.18);
 }
 .mark-logo {
   position: relative;
   z-index: 1;
-  width: 55%;
-  max-width: 150px;
-  filter: drop-shadow(0 6px 18px rgba(201,162,75,.35));
+  width: 76%;
+  max-width: 240px;
+  filter: drop-shadow(0 8px 22px rgba(201,162,75,.4));
+}
+.mark-shine {
+  position: absolute;
+  z-index: 2;
+  inset: 12%;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,.9) 50%, transparent 65%);
+  background-size: 300% 300%;
+  background-position: -150% -150%;
+  -webkit-mask-image: url('assets/logo-gold.png');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-image: url('assets/logo-gold.png');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .mark-shine { animation: mark-shine-sweep 4.5s ease-in-out infinite; }
+}
+@keyframes mark-shine-sweep {
+  0% { background-position: -150% -150%; }
+  10% { background-position: 150% 150%; }
+  100% { background-position: 150% 150%; }
 }
 .mark-caption {
-  position: absolute;
-  bottom: 14px;
   font-size: 12px;
   letter-spacing: 3px;
   color: var(--text-dim);
