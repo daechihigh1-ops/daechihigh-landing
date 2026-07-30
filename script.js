@@ -51,6 +51,16 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
+// Results modal (성적향상 사례)
+const resultCard = document.getElementById('resultCard');
+const resultsModal = document.getElementById('resultsModal');
+const resultsClose = document.getElementById('resultsClose');
+if (resultCard && resultsModal) {
+  resultCard.addEventListener('click', () => resultsModal.classList.add('open'));
+  resultsClose.addEventListener('click', () => resultsModal.classList.remove('open'));
+  resultsModal.addEventListener('click', (e) => { if (e.target === resultsModal) resultsModal.classList.remove('open'); });
+}
+
 // Lightbox
 const lightbox = document.getElementById('lightbox');
 const lightboxAvatar = document.getElementById('lightboxAvatar');
@@ -78,5 +88,8 @@ lightbox.addEventListener('click', (e) => {
   if (e.target === lightbox) closeLightbox();
 });
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'Escape') {
+    closeLightbox();
+    if (resultsModal) resultsModal.classList.remove('open');
+  }
 });

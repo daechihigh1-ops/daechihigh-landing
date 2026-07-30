@@ -186,17 +186,12 @@ img { max-width: 100%; display: block; }
   border-radius: 50%;
   border: 1px solid rgba(201,162,75,.18);
 }
-.mark-text {
+.mark-logo {
   position: relative;
   z-index: 1;
-  font-size: clamp(64px, 9vw, 96px);
-  font-weight: 800;
-  letter-spacing: 6px;
-  transform: rotate(-6deg);
-  background: linear-gradient(135deg, var(--gold-1), var(--gold-2), var(--gold-3));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  width: 55%;
+  max-width: 150px;
+  filter: drop-shadow(0 6px 18px rgba(201,162,75,.35));
 }
 .mark-caption {
   position: absolute;
@@ -351,15 +346,41 @@ img { max-width: 100%; display: block; }
 }
 .wcard:hover { transform: translateY(-4px); border-color: rgba(201,162,75,.4); }
 .wcard-icon {
-  width: 52px; height: 52px;
-  margin: 0 auto 16px;
+  width: 56px; height: 56px;
+  margin: 0 auto 18px;
   border-radius: 50%;
-  background: rgba(201,162,75,.12);
+  background: rgba(201,162,75,.1);
+  border: 1px solid rgba(201,162,75,.25);
   display: flex; align-items: center; justify-content: center;
-  font-size: 22px;
 }
+.wcard-icon svg { width: 26px; height: 26px; }
 .wcard h3 { margin: 0 0 10px; font-size: 18px; }
 .wcard p { margin: 0; color: var(--text-dim); font-size: 15px; }
+.is-result-card { cursor: pointer; }
+.is-result-card:hover { transform: translateY(-6px); border-color: rgba(201,162,75,.5); }
+.wcard-cta {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold-2);
+}
+
+/* ---------- Results modal ---------- */
+.results-content { max-width: 440px; text-align: left; }
+.results-content h3 { margin: 0 0 6px; text-align: center; }
+.results-sub { color: var(--text-dim); font-size: 14px; margin: 0 0 20px; text-align: center; }
+.results-list li {
+  border-top: 1px solid var(--line);
+  padding: 14px 0;
+}
+.results-list li:first-child { border-top: none; }
+.results-list a {
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+}
+.results-list a:hover { color: var(--gold-2); }
 
 /* ---------- Director mission block ---------- */
 .mission-block {
