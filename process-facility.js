@@ -11,6 +11,9 @@ const jobs = [
   { src: 'C:/★ 대치 로고 및 사진/본관사진/3.jpg', out: 'facility-honggwan-5.jpg' },
   { src: 'C:/★ 대치 로고 및 사진/본관사진/4.jpg', out: 'facility-honggwan-6.jpg' },
   { src: 'C:/★ 대치 로고 및 사진/본관사진/5.jpg', out: 'facility-honggwan-7.jpg' },
+  { src: 'C:/★ 대치 로고 및 사진/본관사진/6.jpg', out: 'facility-honggwan-8.jpg' },
+  { src: 'C:/★ 대치 로고 및 사진/본관사진/8.jpg', out: 'facility-honggwan-9.jpg' },
+  { src: 'C:/★ 대치 로고 및 사진/본관사진/KakaoTalk_20240930_130115797.jpg', out: 'facility-honggwan-10.jpg' },
 
   { src: 'C:/★ 대치 로고 및 사진/프리미엄관 사진/KakaoTalk_20260205_154346793 (1).jpg', out: 'facility-premium-1.jpg' },
   { src: 'C:/★ 대치 로고 및 사진/프리미엄관 사진/KakaoTalk_20260205_154346793_01 (1).jpg', out: 'facility-premium-2.jpg' },
@@ -19,6 +22,9 @@ const jobs = [
   { src: 'C:/★ 대치 로고 및 사진/프리미엄관 사진/KakaoTalk_20260205_154346793_02 (1).jpg', out: 'facility-premium-5.jpg' },
   { src: 'C:/★ 대치 로고 및 사진/프리미엄관 사진/KakaoTalk_20260205_154346793_04 (1).jpg', out: 'facility-premium-6.jpg' },
   { src: 'C:/★ 대치 로고 및 사진/프리미엄관 사진/KakaoTalk_20260402_210724474_02.jpg', out: 'facility-premium-7.jpg' },
+  { src: 'C:/★ 대치 로고 및 사진/프리미엄관 사진/KakaoTalk_20260205_154346793_05 (1).jpg', out: 'facility-premium-8.jpg' },
+  { src: 'C:/★ 대치 로고 및 사진/프리미엄관 사진/KakaoTalk_20260205_154346793_06 (1).jpg', out: 'facility-premium-9.jpg' },
+  { src: 'C:/★ 대치 로고 및 사진/프리미엄관 사진/KakaoTalk_20260205_154346793_07 (1).jpg', out: 'facility-premium-10.jpg' },
 
   { src: 'C:/★ 대치 로고 및 사진/목동관사진/111.jpg', out: 'facility-mokdong-1.jpg' },
   { src: 'C:/★ 대치 로고 및 사진/목동관사진/222.jpg', out: 'facility-mokdong-2.jpg' },
@@ -27,6 +33,8 @@ const jobs = [
   { src: 'C:/★ 대치 로고 및 사진/목동관사진/KakaoTalk_20260210_203848438_03.jpg', out: 'facility-mokdong-5.jpg' },
   { src: 'C:/★ 대치 로고 및 사진/목동관사진/KakaoTalk_20260210_203848438_04.jpg', out: 'facility-mokdong-6.jpg' },
   { src: 'C:/★ 대치 로고 및 사진/목동관사진/KakaoTalk_20260210_203457163_08.jpg', out: 'facility-mokdong-7.jpg' },
+  { src: 'C:/★ 대치 로고 및 사진/목동관사진/KakaoTalk_20260210_203848438_07.jpg', out: 'facility-mokdong-8.jpg' },
+  { src: 'C:/★ 대치 로고 및 사진/목동관사진/KakaoTalk_20260210_203848438_10.jpg', out: 'facility-mokdong-9.jpg' },
 ];
 
 (async () => {

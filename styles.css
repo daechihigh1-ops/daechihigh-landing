@@ -145,7 +145,7 @@ img { max-width: 100%; display: block; }
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  padding: 180px 24px 120px;
+  padding: 216px 24px 140px;
   overflow: hidden;
   text-align: center;
 }
@@ -242,7 +242,7 @@ img { max-width: 100%; display: block; }
   border: 1px solid rgba(201,162,75,.35);
   padding: 7px 16px;
   border-radius: 100px;
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 }
 .hero-title {
   font-size: clamp(32px, 6vw, 52px);
@@ -266,6 +266,13 @@ img { max-width: 100%; display: block; }
   font-size: 14px;
   line-height: 1.6;
   color: var(--text-dim);
+}
+.kakao-buttons-note {
+  margin: 20px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dim);
+  text-align: center;
 }
 
 /* ---------- Sections ---------- */
@@ -320,29 +327,43 @@ img { max-width: 100%; display: block; }
   gap: 56px;
 }
 .director-photo-wrap {
+  position: relative;
   flex: 0 0 auto;
   width: 54%;
   max-width: 560px;
   cursor: pointer;
   transition: transform .25s ease;
-  padding: 7px;
-  background: linear-gradient(135deg, var(--gold-1), var(--gold-3), var(--gold-1));
-  border-radius: calc(var(--radius) + 8px);
-  box-shadow: 0 24px 56px rgba(0,0,0,.45), 0 0 70px rgba(201,162,75,.16);
+}
+.director-photo-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -12%;
+  background: radial-gradient(circle at 50% 40%, rgba(201,162,75,.22), transparent 70%);
+  filter: blur(24px);
+  z-index: 0;
 }
 .director-photo-wrap:hover { transform: translateY(-6px); }
 .director-photo {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
   aspect-ratio: 2079 / 2350;
   object-fit: cover;
-  border-radius: calc(var(--radius) + 2px);
-  border: 1px solid rgba(11,17,32,.5);
   filter: brightness(1.14) contrast(1.02) saturate(1.04);
+  -webkit-mask-image: radial-gradient(ellipse 82% 86% at 50% 46%, #000 60%, transparent 100%);
+  mask-image: radial-gradient(ellipse 82% 86% at 50% 46%, #000 60%, transparent 100%);
 }
 .director-body { flex: 1 1 auto; min-width: 0; }
-.director-body h3 { font-size: 28px; margin: 0 0 6px; }
-.director-role { color: var(--gold-2); font-size: 15px; margin: 0 0 22px; font-weight: 600; }
+.director-body h3 { font-size: 19px; font-weight: 600; color: var(--text-dim); margin: 0 0 4px; }
+.director-role { color: var(--text-dim); font-size: 13px; margin: 0 0 26px; font-weight: 400; }
+.director-quote {
+  color: var(--gold-1);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0 0 22px;
+}
 .director-bio {
   color: var(--text);
   font-size: 20px;
@@ -436,12 +457,12 @@ img { max-width: 100%; display: block; }
 .carousel-dot.active { background: var(--gold-3); }
 
 /* ---------- Teachers ---------- */
-.carousel-teachers .carousel-slide.tcard { width: 320px; }
+.carousel-teachers .carousel-slide.tcard { width: 208px; }
 .tcard {
   background: var(--bg-alt);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 20px 20px 28px;
+  padding: 14px 14px 20px;
   text-align: center;
   cursor: pointer;
   transition: transform .2s ease, border-color .2s ease;
@@ -450,11 +471,11 @@ img { max-width: 100%; display: block; }
 .tcard-photo-wrap {
   width: 100%;
   aspect-ratio: 4 / 5;
-  border-radius: calc(var(--radius) - 6px);
+  border-radius: calc(var(--radius) - 8px);
   overflow: hidden;
-  margin: 0 0 18px;
+  margin: 0 0 14px;
   border: 1px solid rgba(201,162,75,.3);
-  box-shadow: 0 16px 34px rgba(0,0,0,.35);
+  box-shadow: 0 12px 26px rgba(0,0,0,.35);
 }
 .tcard-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
 .tcard-placeholder {
@@ -464,15 +485,15 @@ img { max-width: 100%; display: block; }
   background: linear-gradient(160deg, rgba(201,162,75,.16), rgba(11,17,32,.95));
 }
 .tcard-initial {
-  font-size: 72px;
+  font-size: 48px;
   font-weight: 800;
   background: linear-gradient(135deg, var(--gold-1), var(--gold-3));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-.tcard h3 { margin: 0 0 6px; font-size: 19px; }
-.tcard-role { color: var(--text-dim); font-size: 16px; margin: 0 0 14px; }
+.tcard h3 { margin: 0 0 4px; font-size: 16px; }
+.tcard-role { color: var(--text-dim); font-size: 13px; margin: 0; }
 .tag-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
 .tag {
   font-size: 12px;
@@ -649,6 +670,8 @@ img { max-width: 100%; display: block; }
 }
 .map-card:hover { transform: translateY(-4px); border-color: rgba(201,162,75,.4); }
 .map-embed {
+  position: relative;
+  display: block;
   aspect-ratio: 16 / 10;
   overflow: hidden;
   background: var(--bg-alt);
@@ -658,12 +681,26 @@ img { max-width: 100%; display: block; }
   height: 100%;
   border: 0;
   pointer-events: none;
-  filter: invert(0.92) hue-rotate(180deg) brightness(0.95) contrast(0.9) saturate(0.7);
+}
+.map-embed-badge {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  padding: 9px 12px;
+  background: rgba(11,17,32,.82);
+  border: 1px solid rgba(201,162,75,.35);
+  border-radius: 8px;
+  color: #f6e2a8;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  backdrop-filter: blur(2px);
 }
 .map-card-label { padding: 14px 14px 4px; font-size: 16px; font-weight: 600; text-align: center; background: var(--bg); }
 .map-card-label span { display: block; margin-top: 6px; font-size: 13px; font-weight: 400; color: var(--text-dim); }
 .map-card-transit {
-  padding: 12px 16px 6px;
+  padding: 12px 16px 18px;
   background: var(--bg);
 }
 .map-card-transit li {
@@ -675,23 +712,13 @@ img { max-width: 100%; display: block; }
   padding: 4px 0;
 }
 .transit-icon { width: 16px; height: 16px; flex-shrink: 0; }
-.map-card-link {
-  display: block;
-  text-align: center;
-  padding: 8px 16px 18px;
-  background: var(--bg);
-  color: var(--gold-2);
-  font-size: 13px;
-  font-weight: 700;
-}
-.map-card-link:hover { color: var(--gold-1); }
 
 /* ---------- Kakao banner ---------- */
 .kakao-banner {
-  padding: 28px 24px;
-  background: var(--bg-alt);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  padding: 44px 24px;
+  background: radial-gradient(ellipse at 20% 50%, rgba(201,162,75,.16), transparent 62%), var(--bg-alt);
+  border-top: 1px solid rgba(201,162,75,.3);
+  border-bottom: 1px solid rgba(201,162,75,.3);
 }
 .kakao-banner-inner {
   max-width: var(--max);
@@ -699,11 +726,40 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 20px;
   flex-wrap: wrap;
 }
-.kakao-banner-text strong { display: block; font-size: 18px; margin-bottom: 4px; }
+.kakao-banner-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,162,75,.4);
+  background: rgba(201,162,75,.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.kakao-banner-icon svg { width: 24px; height: 24px; }
+.kakao-banner-text { flex: 1 1 auto; min-width: 200px; }
+.kakao-banner-text strong { display: flex; align-items: center; gap: 8px; font-size: 22px; font-weight: 800; color: var(--gold-1); margin-bottom: 6px; }
 .kakao-banner-text span { color: var(--text-dim); font-size: 16px; }
+.kakao-banner-new {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .5px;
+  color: #241a05;
+  background: linear-gradient(135deg, var(--gold-1), var(--gold-3));
+  padding: 3px 9px;
+  border-radius: 100px;
+  animation: kakao-banner-pulse 2s ease-in-out infinite;
+}
+@keyframes kakao-banner-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .6; }
+}
+.kakao-banner-btn { flex-shrink: 0; font-size: 15px; padding: 14px 26px; }
 
 /* ---------- Branches ---------- */
 .branch-grid { grid-template-columns: repeat(3, 1fr); }
@@ -908,7 +964,7 @@ img { max-width: 100%; display: block; }
   .section-alt, .cta-final { clip-path: polygon(0 24px, 100% 0, 100% calc(100% - 24px), 0 100%); }
   .card-grid, .branch-grid, .why-grid, .map-grid, .leveltest-grid { grid-template-columns: 1fr; }
   .facility-photo { width: 78vw; }
-  .carousel-teachers .carousel-slide.tcard { width: 78vw; }
+  .carousel-teachers .carousel-slide.tcard { width: 58vw; }
   .carousel-prev { left: 4px; }
   .carousel-next { right: 4px; }
   .director-card { flex-direction: column; align-items: center; text-align: center; }
@@ -932,12 +988,14 @@ img { max-width: 100%; display: block; }
   .badge { font-size: 10px; letter-spacing: 0.5px; padding: 6px 12px; white-space: nowrap; }
   .hero-sub { font-size: 15px; }
   .hero-note { font-size: 12px; }
+  .kakao-buttons-note { font-size: 12px; }
   .eyebrow { font-size: 11px; }
   .section-sub { font-size: 14px; }
   .eitem-body h3 { font-size: 17px; }
   .eitem-body p { font-size: 14px; }
   .director-role { font-size: 13px; }
-  .director-bio, .mission-quote { font-size: 16px; }
+  .director-bio { font-size: 16px; }
+  .director-quote { font-size: 20px; }
   .mission-title { font-size: 18px; }
   .mission-body { font-size: 14px; }
   .mission-signature { font-size: 12px; }
@@ -957,8 +1015,11 @@ img { max-width: 100%; display: block; }
   .map-card-label { font-size: 13px; }
   .map-card-label span { font-size: 11px; }
   .map-card-transit li { font-size: 11px; }
-  .kakao-banner-text strong { font-size: 14px; }
+  .kakao-banner-text strong { font-size: 16px; }
   .kakao-banner-text span { font-size: 12px; }
+  .kakao-banner-icon { width: 40px; height: 40px; }
+  .kakao-banner-icon svg { width: 18px; height: 18px; }
+  .kakao-banner-btn { font-size: 13px; padding: 11px 18px; }
   .cal-tool-link-hero .cal-tool-text strong { font-size: 16px; }
   .cal-tool-link-hero .cal-tool-text span { font-size: 12px; }
   .cta-final p { font-size: 14px; }
