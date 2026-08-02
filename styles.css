@@ -259,6 +259,12 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   flex-wrap: wrap;
 }
+.hero-note {
+  margin: 18px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
 
 /* ---------- Sections ---------- */
 .section { padding: 110px 24px; }
@@ -447,6 +453,20 @@ img { max-width: 100%; display: block; }
   border-radius: 100px;
 }
 
+/* ---------- Level test ---------- */
+.leveltest-grid { grid-template-columns: repeat(2, 1fr); align-items: start; }
+.ltcard {
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+}
+.ltcard h3 { margin: 0 0 16px; font-size: 20px; color: var(--gold-2); }
+.ltcard p { margin: 0 0 16px; color: var(--text-dim); font-size: 16px; line-height: 1.7; }
+.ltcard-info { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line); }
+.ltcard-info li { color: var(--text); font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+.ltcard-info li:last-child { margin-bottom: 0; }
+
 /* ---------- Why cards ---------- */
 .why-grid { grid-template-columns: repeat(3, 1fr); }
 .wcard {
@@ -494,6 +514,9 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
 }
 .results-list a:hover { color: var(--gold-2); }
+
+.branch-picker-list { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+.branch-picker-btn { width: 100%; }
 
 /* ---------- Director mission block ---------- */
 .mission-block {
@@ -573,10 +596,15 @@ img { max-width: 100%; display: block; }
   aspect-ratio: 4 / 3;
   border-radius: var(--radius);
   border: 1px solid var(--line);
-  background: repeating-linear-gradient(45deg, var(--bg-alt), var(--bg-alt) 10px, var(--bg) 10px, var(--bg) 20px);
+  overflow: hidden;
   display: flex; align-items: center; justify-content: center;
   color: var(--text-dim);
   font-size: 14px;
+}
+.facility-photo img { width: 100%; height: 100%; object-fit: cover; }
+.facility-photo:empty,
+.facility-photo:not(:has(img)) {
+  background: repeating-linear-gradient(45deg, var(--bg-alt), var(--bg-alt) 10px, var(--bg) 10px, var(--bg) 20px);
 }
 
 /* ---------- Map / location ---------- */
@@ -590,14 +618,25 @@ img { max-width: 100%; display: block; }
 }
 .map-card:hover { transform: translateY(-4px); border-color: rgba(201,162,75,.4); }
 .map-placeholder {
-  aspect-ratio: 4 / 3;
-  display: flex; align-items: center; justify-content: center;
-  background: repeating-linear-gradient(45deg, var(--bg-alt), var(--bg-alt) 10px, var(--bg) 10px, var(--bg) 20px);
-  color: var(--text-dim);
+  aspect-ratio: 16 / 8;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 8px;
+  background: radial-gradient(circle at 50% 30%, rgba(201,162,75,.14), transparent 70%), var(--bg-alt);
+  color: var(--gold-2);
   font-size: 13px;
+  font-weight: 700;
 }
-.map-card-label { padding: 14px; font-size: 16px; font-weight: 600; text-align: center; background: var(--bg); }
+.map-card-label { padding: 14px 14px 4px; font-size: 16px; font-weight: 600; text-align: center; background: var(--bg); }
 .map-card-label span { display: block; margin-top: 6px; font-size: 13px; font-weight: 400; color: var(--text-dim); }
+.map-card-transit {
+  padding: 12px 16px 18px;
+  background: var(--bg);
+}
+.map-card-transit li {
+  font-size: 13px;
+  color: var(--text-dim);
+  padding: 4px 0;
+}
 
 /* ---------- Kakao banner ---------- */
 .kakao-banner {
@@ -661,26 +700,12 @@ img { max-width: 100%; display: block; }
 
 /* ---------- Kakao branch buttons ---------- */
 .kakao-buttons { margin-top: 40px; text-align: center; }
-.kakao-buttons-label { font-size: 15px; color: var(--text-dim); font-weight: 600; margin-bottom: 16px; }
+.kakao-buttons-label { font-size: 20px; font-weight: 800; margin-bottom: 20px; }
 .kakao-buttons-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .kakao-branch-btn { border-color: #fee500; color: #fee500; }
 .kakao-branch-btn:hover { background: #fee500; color: #3c1e1e; }
 
-/* ---------- Calendar ---------- */
-.cal-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 14px;
-}
-.cal-item {
-  background: var(--bg-alt);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 20px 16px;
-}
-.cal-month { color: var(--gold-2); font-weight: 800; font-size: 16px; margin-bottom: 8px; }
-.cal-desc { color: var(--text-dim); font-size: 16px; }
-
+/* ---------- Calendar tool CTA ---------- */
 .cal-tool-link {
   margin-top: 20px;
   display: flex;
@@ -697,6 +722,17 @@ img { max-width: 100%; display: block; }
 .cal-tool-text strong { display: block; font-size: 17px; margin-bottom: 4px; }
 .cal-tool-text span { color: var(--text-dim); font-size: 16px; }
 .cal-tool-arrow { color: var(--gold-2); font-size: 20px; flex-shrink: 0; }
+.cal-tool-link-hero {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px;
+  border-width: 2px;
+  border-color: rgba(201,162,75,.5);
+  box-shadow: 0 0 50px rgba(201,162,75,.1);
+}
+.cal-tool-link-hero .cal-tool-text strong { font-size: 22px; margin-bottom: 8px; }
+.cal-tool-link-hero .cal-tool-text span { font-size: 17px; }
+.cal-tool-link-hero .cal-tool-arrow { font-size: 28px; }
 
 /* ---------- Final CTA ---------- */
 .cta-final {
@@ -799,8 +835,7 @@ img { max-width: 100%; display: block; }
   .eitem { grid-template-columns: 60px 1fr; gap: 18px; }
   .eitem-num { font-size: 28px; }
   .section-alt, .cta-final { clip-path: polygon(0 24px, 100% 0, 100% calc(100% - 24px), 0 100%); }
-  .card-grid, .branch-grid, .why-grid, .map-grid { grid-template-columns: 1fr; }
-  .cal-grid { grid-template-columns: repeat(2, 1fr); }
+  .card-grid, .branch-grid, .why-grid, .map-grid, .leveltest-grid { grid-template-columns: 1fr; }
   .facility-photo { width: 78vw; }
   .carousel-teachers .carousel-slide.tcard { width: 78vw; }
   .carousel-prev { left: 4px; }
@@ -814,10 +849,7 @@ img { max-width: 100%; display: block; }
   .hero { padding: 140px 20px 80px; }
   .dot-nav { display: none; }
   .cal-tool-link { flex-direction: column; align-items: flex-start; }
+  .cal-tool-link-hero { padding: 28px 24px; }
   .float-label { display: none; }
   .float-btn { padding: 14px; border-radius: 50%; }
-}
-
-@media (max-width: 480px) {
-  .cal-grid { grid-template-columns: 1fr; }
 }

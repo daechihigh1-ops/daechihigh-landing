@@ -51,6 +51,19 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
+// Hero "상담 신청" -> branch picker (fastest response is the Kakao channel)
+const heroConsultBtn = document.getElementById('heroConsultBtn');
+const branchPickerModal = document.getElementById('branchPickerModal');
+const branchPickerClose = document.getElementById('branchPickerClose');
+if (heroConsultBtn && branchPickerModal) {
+  heroConsultBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    branchPickerModal.classList.add('open');
+  });
+  branchPickerClose.addEventListener('click', () => branchPickerModal.classList.remove('open'));
+  branchPickerModal.addEventListener('click', (e) => { if (e.target === branchPickerModal) branchPickerModal.classList.remove('open'); });
+}
+
 // Results modal (성적향상 사례)
 const resultCard = document.getElementById('resultCard');
 const resultsModal = document.getElementById('resultsModal');
@@ -96,6 +109,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closeLightbox();
     if (resultsModal) resultsModal.classList.remove('open');
+    if (branchPickerModal) branchPickerModal.classList.remove('open');
   }
 });
 
