@@ -669,34 +669,45 @@ img { max-width: 100%; display: block; }
   transition: transform .2s ease, border-color .2s ease;
 }
 .map-card:hover { transform: translateY(-4px); border-color: rgba(201,162,75,.4); }
-.map-embed {
+.map-icon-card {
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: var(--bg-alt);
+  background: radial-gradient(ellipse at 50% 42%, rgba(201,162,75,.18), transparent 68%), var(--bg-alt);
+  transition: background .25s ease;
 }
-.map-embed iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  pointer-events: none;
-}
-.map-embed-badge {
+.map-icon-card:hover { background: radial-gradient(ellipse at 50% 42%, rgba(201,162,75,.28), transparent 68%), var(--bg-alt); }
+.map-icon-ring {
   position: absolute;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  padding: 9px 12px;
-  background: rgba(11,17,32,.82);
-  border: 1px solid rgba(201,162,75,.35);
-  border-radius: 8px;
-  color: #f6e2a8;
-  font-size: 12px;
-  font-weight: 600;
-  text-align: center;
-  backdrop-filter: blur(2px);
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,162,75,.3);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -66%);
 }
+.map-icon-ring::before {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,162,75,.16);
+}
+.map-icon-pin {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  margin-top: -12px;
+  filter: drop-shadow(0 8px 16px rgba(201,162,75,.35));
+}
+.map-icon-label { position: relative; font-size: 15px; font-weight: 700; color: var(--gold-1); letter-spacing: .3px; }
+.map-icon-sub { position: relative; font-size: 12px; color: var(--text-dim); }
 .map-card-label { padding: 14px 14px 4px; font-size: 16px; font-weight: 600; text-align: center; background: var(--bg); }
 .map-card-label span { display: block; margin-top: 6px; font-size: 13px; font-weight: 400; color: var(--text-dim); }
 .map-card-transit {
