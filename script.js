@@ -89,8 +89,8 @@ document.querySelectorAll('.lightbox-trigger').forEach(trigger => {
     if (photo) {
       lightboxAvatar.innerHTML = `<img src="${photo}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">`;
     } else {
-      const avatarEl = trigger.querySelector('.avatar');
-      lightboxAvatar.textContent = avatarEl ? avatarEl.textContent : '';
+      const avatarEl = trigger.querySelector('.avatar, .tcard-initial');
+      lightboxAvatar.textContent = avatarEl ? avatarEl.textContent : (name ? name.charAt(0) : '');
     }
     lightboxName.textContent = name;
     lightboxRole.textContent = role;
