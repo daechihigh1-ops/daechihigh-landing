@@ -51,17 +51,34 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
-// Hero "상담 신청" -> branch picker (fastest response is the Kakao channel)
+// Hero "상담 신청" + floating kakao button -> branch picker (fastest response is the Kakao channel)
 const heroConsultBtn = document.getElementById('heroConsultBtn');
+const floatKakaoBtn = document.getElementById('floatKakaoBtn');
 const branchPickerModal = document.getElementById('branchPickerModal');
 const branchPickerClose = document.getElementById('branchPickerClose');
-if (heroConsultBtn && branchPickerModal) {
-  heroConsultBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    branchPickerModal.classList.add('open');
+if (branchPickerModal) {
+  [heroConsultBtn, floatKakaoBtn].forEach(btn => {
+    if (!btn) return;
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      branchPickerModal.classList.add('open');
+    });
   });
   branchPickerClose.addEventListener('click', () => branchPickerModal.classList.remove('open'));
   branchPickerModal.addEventListener('click', (e) => { if (e.target === branchPickerModal) branchPickerModal.classList.remove('open'); });
+}
+
+// Floating phone button -> branch phone picker
+const floatPhoneBtn = document.getElementById('floatPhoneBtn');
+const phonePickerModal = document.getElementById('phonePickerModal');
+const phonePickerClose = document.getElementById('phonePickerClose');
+if (floatPhoneBtn && phonePickerModal) {
+  floatPhoneBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    phonePickerModal.classList.add('open');
+  });
+  phonePickerClose.addEventListener('click', () => phonePickerModal.classList.remove('open'));
+  phonePickerModal.addEventListener('click', (e) => { if (e.target === phonePickerModal) phonePickerModal.classList.remove('open'); });
 }
 
 // Results modal (성적향상 사례)
@@ -110,6 +127,7 @@ document.addEventListener('keydown', (e) => {
     closeLightbox();
     if (resultsModal) resultsModal.classList.remove('open');
     if (branchPickerModal) branchPickerModal.classList.remove('open');
+    if (phonePickerModal) phonePickerModal.classList.remove('open');
   }
 });
 

@@ -910,15 +910,16 @@ img { max-width: 100%; display: block; }
 .float-btn {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 18px;
+  gap: 7px;
+  padding: 9px 14px;
   border-radius: 100px;
   box-shadow: 0 6px 18px rgba(0,0,0,.35);
   transition: transform .15s ease;
 }
 .float-btn:hover { transform: translateX(-4px); }
-.float-icon { font-size: 19px; line-height: 1; }
-.float-label { font-size: 15px; font-weight: 700; white-space: nowrap; }
+.float-icon { display: flex; align-items: center; justify-content: center; line-height: 1; }
+.float-icon svg { width: 16px; height: 16px; display: block; }
+.float-label { font-size: 13px; font-weight: 700; white-space: nowrap; }
 .float-kakao { background: #fee500; color: #3c1e1e; }
 .float-phone { background: linear-gradient(90deg, var(--gold-1), var(--gold-3)); color: #241a05; }
 .float-consult { background: #1e293b; border: 1px solid var(--line); color: var(--text); }
@@ -989,7 +990,8 @@ img { max-width: 100%; display: block; }
   .cal-tool-link { flex-direction: column; align-items: flex-start; }
   .cal-tool-link-hero { padding: 28px 24px; }
   .float-label { display: none; }
-  .float-btn { padding: 14px; border-radius: 50%; }
+  .float-btn { padding: 11px; border-radius: 50%; }
+  .float-icon svg { width: 15px; height: 15px; }
 
   /* Mobile-only type scale — everything above is sized for desktop reading
      distance; phones need noticeably smaller text, not just narrower columns. */
