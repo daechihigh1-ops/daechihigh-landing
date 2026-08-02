@@ -9,7 +9,7 @@ const OUT_W = 480, OUT_H = 600; // 4:5 portrait, consistent across all cards
 // original W/H). Boxes are pre-shaped close to the 4:5 target ratio so
 // the auto-fit step below only needs to make small adjustments.
 const photos = [
-  { file: '디쌤 원장 프로필.jpg', out: 'teacher-disaem.jpg', top: 0.07, bottom: 0.88, left: 0.1635, right: 0.8115 },
+  { file: '디쌤 원장 프로필.jpg', out: 'teacher-disaem.jpg', top: 0.07, bottom: 0.88, left: 0.1635, right: 0.8115, normalize: true },
   { file: '김진우 프로필.jpg', out: 'teacher-kimjinwoo.jpg', top: 0.05, bottom: 0.90, left: 0.15, right: 0.83 },
   { file: '김금단 프로필.png', out: 'teacher-kimgeumdan.jpg', top: 0.06, bottom: 0.87, left: 0.176, right: 0.824 },
   { file: '배경호 프로필.jpg', out: 'teacher-baekyungho.jpg', top: 0.075, bottom: 0.90, left: 0.1825, right: 0.8425 },
@@ -55,12 +55,12 @@ const targetRatio = OUT_W / OUT_H; // 0.8
     boxW = Math.min(boxW, meta.width - boxLeft);
     boxH = Math.min(boxH, meta.height - boxTop);
 
-    await sharp(SRC + p.file)
+    let pipeline = sharp(SRC + p.file)
       .extract({ left: boxLeft, top: boxTop, width: boxW, height: boxH })
       .resize(OUT_W, OUT_H, { fit: 'cover' })
-      .grayscale()
-      .jpeg({ quality: 88 })
-      .toFile('assets/' + p.out);
+      .grayscale();
+    if (p.normalize) pipeline = pipeline.normalize();
+    await pipeline.jpeg({ quality: 88 }).toFile('assets/' + p.out);
     console.log('done', p.out, boxLeft, boxTop, boxW, boxH);
   }
 })();
