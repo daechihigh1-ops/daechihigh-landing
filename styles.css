@@ -747,6 +747,13 @@ img { max-width: 100%; display: block; }
 /* ---------- Footer ---------- */
 .footer { padding: 64px 24px 140px; }
 .footer-inner { max-width: var(--max); margin: 0 auto; }
+.footer-tagline {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  margin: 0 0 32px;
+  color: var(--text);
+}
 .footer-brand { font-size: 20px; font-weight: 800; margin-bottom: 28px; }
 .footer-branches {
   display: grid;
@@ -756,7 +763,17 @@ img { max-width: 100%; display: block; }
 }
 .footer-branches strong { display: block; margin-bottom: 6px; font-size: 16px; }
 .footer-branches p { margin: 0; color: var(--text-dim); font-size: 16px; }
-.footer-fine { color: #64748b; font-size: 14px; border-top: 1px solid var(--line); padding-top: 24px; margin: 0; }
+.footer-registration {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  margin-bottom: 16px;
+}
+.footer-registration li {
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.footer-fine { color: #64748b; font-size: 14px; margin: 0; }
 
 /* ---------- Floating CTA stack ---------- */
 .float-stack {
