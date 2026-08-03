@@ -17,9 +17,10 @@ const photos = [
   { file: '안소현 프로필.jpg', out: 'teacher-ansoseon.jpg', top: 0.127, bottom: 0.64, left: 0.212, right: 0.778 },
   { file: '최윤후 프로필.jpg', out: 'teacher-choiyoonhoo.jpg', top: 0.114, bottom: 0.777, left: 0.133, right: 0.837 },
   { file: '조윤성 프로필.png', out: 'teacher-jhoyoonsung.jpg', top: 0.203, bottom: 0.76, left: 0.177, right: 0.803 },
-  { file: '장효진 프로필.jpg', out: 'teacher-jangHyojin.jpg', top: 0.08, bottom: 0.50, left: 0.2225, right: 0.7275 },
+  { file: '장효진 프로필.jpg', out: 'teacher-jangHyojin.jpg', top: 0.04, bottom: 0.75, left: 0.05, right: 0.90 },
   { file: '김정민 프로필.png', out: 'teacher-kimjeongmin.jpg', top: 0.045, bottom: 0.86, left: 0.2115, right: 0.8635 },
   { file: '박한미 프로필.jpeg', out: 'teacher-parkhanmi.jpg', top: 0.03, bottom: 0.81, left: 0.10, right: 0.90 },
+  { file: '형일우 프로필.jpg', out: 'teacher-hyungilwoo.jpg', top: 0.06, bottom: 0.61, left: 0.02, right: 0.96 },
 ];
 
 const targetRatio = OUT_W / OUT_H; // 0.8
