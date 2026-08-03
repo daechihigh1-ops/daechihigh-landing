@@ -6,7 +6,7 @@
 <title>대치하이학원 | 국·영·수 밀착관리, 본관·프리미엄관·목동관</title>
 <meta name="description" content="대치하이학원 — 국어·영어·수학 초·중·고 밀착관리. 본관, 프리미엄관(당산), 목동관.">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
-<link rel="stylesheet" href="styles.css?v=8">
+<link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
 
@@ -38,11 +38,11 @@
   <div class="hero-inner hero-grid reveal">
     <div class="hero-copy">
       <div class="badge">DAECHIHIGH · 본관 · 프리미엄관 · 목동관</div>
-      <h1 class="hero-title">초등부터 대입까지,<br><span class="gold-text">우리 아이 성장의 모든 순간을 함께합니다</span></h1>
+      <h1 class="hero-title">초등부터 대입까지,<br><span class="gold-text">우리 아이 성장의 모든 순간을<br>함께합니다</span></h1>
       <p class="hero-sub">국어·영어·수학 초·중·고 밀착관리 · 300강좌 규모 · 당산 지역 1위를 향해 갑니다</p>
       <div class="hero-actions">
         <a href="#cta" class="btn btn-gold" id="heroConsultBtn">상담 신청</a>
-        <a href="#kakaoInquiry" class="btn btn-outline">과목별 시간표 보기 ↓</a>
+        <a href="#" id="heroTimetableBtn" class="btn btn-outline">과목별 시간표 보기</a>
       </div>
     </div>
     <div class="hero-mark" aria-hidden="true">
@@ -61,7 +61,7 @@
   <div class="section-inner">
     <div class="section-head reveal">
       <div class="eyebrow">WHY DAECHIHIGH</div>
-      <h2>학원은 많습니다. 하지만 우리 아이에게<br><span class="gold-text">딱 맞는 학원</span>은 많지 않습니다.</h2>
+      <h2>학원은 많습니다.<br>하지만 우리 아이에게 <span class="gold-text">딱 맞는 학원</span>은 많지 않습니다.</h2>
     </div>
     <div class="card-grid why-grid">
       <div class="wcard reveal">
@@ -134,7 +134,7 @@
   <div class="section-inner">
     <div class="section-head reveal">
       <div class="eyebrow">OUR PHILOSOPHY</div>
-      <h2>대치하이학원이 아이를 대하는 방식</h2>
+      <h2>대치하이학원이<br>아이를 대하는 방식</h2>
       <p class="section-sub">성적표 너머의 아이를 봅니다</p>
     </div>
     <div class="editorial-list">
@@ -190,7 +190,7 @@
     <div class="section-head reveal">
       <div class="eyebrow">MENTORS</div>
       <h2>강사진 소개</h2>
-      <p class="teacher-tagline">국·영·수 <span class="gold-text">팀장급 이상 · 강의경력 100년</span></p>
+      <p class="teacher-tagline">국·영·수 <span class="gold-text">팀장급 이상 · 강의경력 총 100년</span></p>
     </div>
     <div class="carousel carousel-teachers" data-carousel>
       <div class="carousel-track">
@@ -356,7 +356,6 @@
         <a href="http://pf.kakao.com/_nBxbRX/chat" target="_blank" rel="noopener" class="btn btn-outline kakao-branch-btn"><svg class="kakao-icon" viewBox="0 0 24 24"><path d="M12 3.5C6.7 3.5 2.4 6.9 2.4 11.1c0 2.7 1.8 5.1 4.5 6.4-.2.7-.7 2.5-.8 2.9-.1.4.2.4.3.3.2-.1 2.6-1.7 3.6-2.4.6.1 1.3.1 2 .1 5.3 0 9.6-3.4 9.6-7.6S17.3 3.5 12 3.5z" fill="#3c1e1e"/></svg>프리미엄관 (고등)</a>
         <a href="http://pf.kakao.com/_aJmen/chat" target="_blank" rel="noopener" class="btn btn-outline kakao-branch-btn"><svg class="kakao-icon" viewBox="0 0 24 24"><path d="M12 3.5C6.7 3.5 2.4 6.9 2.4 11.1c0 2.7 1.8 5.1 4.5 6.4-.2.7-.7 2.5-.8 2.9-.1.4.2.4.3.3.2-.1 2.6-1.7 3.6-2.4.6.1 1.3.1 2 .1 5.3 0 9.6-3.4 9.6-7.6S17.3 3.5 12 3.5z" fill="#3c1e1e"/></svg>목동관 (초중등)</a>
       </div>
-      <p class="kakao-buttons-note">영·수는 레벨테스트를 통해 반배정되며, 내신기간에 따라 시간표가 변동됩니다.<br>과목별·학년별 정확한 시간표는 위 카카오톡 채널로 1:1 문의해주세요.</p>
     </div>
   </div>
 </section>
@@ -621,6 +620,17 @@
   </div>
 </div>
 
+<!-- ================= TIMETABLE INFO MODAL ================= -->
+<div class="lightbox" id="timetableInfoModal">
+  <div class="lightbox-content results-content">
+    <button class="lightbox-close" id="timetableInfoClose">&times;</button>
+    <h3>과목별 시간표 안내</h3>
+    <p class="timetable-info-text">영·수는 레벨테스트를 통해 반배정되며,<br>내신기간에 따라 시간표가 변동됩니다.</p>
+    <p class="timetable-info-text">과목별·학년별 정확한 시간표는<br>카카오톡 채널로 1:1 문의해주세요.</p>
+    <a href="#" id="timetableInfoKakaoBtn" class="btn btn-gold timetable-info-btn"><svg class="kakao-icon" viewBox="0 0 24 24"><path d="M12 3.5C6.7 3.5 2.4 6.9 2.4 11.1c0 2.7 1.8 5.1 4.5 6.4-.2.7-.7 2.5-.8 2.9-.1.4.2.4.3.3.2-.1 2.6-1.7 3.6-2.4.6.1 1.3.1 2 .1 5.3 0 9.6-3.4 9.6-7.6S17.3 3.5 12 3.5z" fill="#3c1e1e"/></svg>카카오톡 채널로 문의하기</a>
+  </div>
+</div>
+
 <!-- ================= LIGHTBOX ================= -->
 <div class="lightbox" id="lightbox">
   <div class="lightbox-content">
@@ -631,6 +641,6 @@
   </div>
 </div>
 
-<script src="script.js?v=7"></script>
+<script src="script.js?v=8"></script>
 </body>
 </html>

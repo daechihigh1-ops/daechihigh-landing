@@ -568,6 +568,23 @@ img { max-width: 100%; display: block; }
 .results-list a:hover { color: var(--gold-2); }
 
 .branch-picker-list { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+
+/* ---------- Timetable info modal ---------- */
+.timetable-info-text {
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.7;
+  text-align: center;
+  margin: 0 0 20px;
+}
+.timetable-info-text:last-of-type { margin-bottom: 26px; }
+.timetable-info-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
 .branch-picker-btn { width: 100%; }
 
 /* ---------- Director mission block ---------- */

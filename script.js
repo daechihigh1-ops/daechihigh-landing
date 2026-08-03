@@ -81,6 +81,27 @@ if (floatPhoneBtn && phonePickerModal) {
   phonePickerModal.addEventListener('click', (e) => { if (e.target === phonePickerModal) phonePickerModal.classList.remove('open'); });
 }
 
+// Hero "과목별 시간표 보기" -> timetable info popup
+const heroTimetableBtn = document.getElementById('heroTimetableBtn');
+const timetableInfoModal = document.getElementById('timetableInfoModal');
+const timetableInfoClose = document.getElementById('timetableInfoClose');
+const timetableInfoKakaoBtn = document.getElementById('timetableInfoKakaoBtn');
+if (heroTimetableBtn && timetableInfoModal) {
+  heroTimetableBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    timetableInfoModal.classList.add('open');
+  });
+  timetableInfoClose.addEventListener('click', () => timetableInfoModal.classList.remove('open'));
+  timetableInfoModal.addEventListener('click', (e) => { if (e.target === timetableInfoModal) timetableInfoModal.classList.remove('open'); });
+  if (timetableInfoKakaoBtn && branchPickerModal) {
+    timetableInfoKakaoBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      timetableInfoModal.classList.remove('open');
+      branchPickerModal.classList.add('open');
+    });
+  }
+}
+
 // Results modal (성적향상 사례)
 const resultCard = document.getElementById('resultCard');
 const resultsModal = document.getElementById('resultsModal');
@@ -128,6 +149,7 @@ document.addEventListener('keydown', (e) => {
     if (resultsModal) resultsModal.classList.remove('open');
     if (branchPickerModal) branchPickerModal.classList.remove('open');
     if (phonePickerModal) phonePickerModal.classList.remove('open');
+    if (timetableInfoModal) timetableInfoModal.classList.remove('open');
   }
 });
 
