@@ -10,7 +10,7 @@ const OUT_W = 480, OUT_H = 600; // 4:5 portrait, consistent across all cards
 // the auto-fit step below only needs to make small adjustments.
 const photos = [
   { file: '디쌤 원장 프로필.jpg', out: 'teacher-disaem.jpg', top: 0.07, bottom: 0.88, left: 0.1635, right: 0.8115, normalize: true },
-  { file: '김진우 프로필.jpg', out: 'teacher-kimjinwoo.jpg', top: 0.02, bottom: 0.57, left: 0.23, right: 0.78 },
+  { file: '김진우 프로필.jpg', out: 'teacher-kimjinwoo.jpg', top: 0.128, bottom: 0.85, left: 0.144, right: 0.866 },
   { file: '김금단 프로필.png', out: 'teacher-kimgeumdan.jpg', top: 0.235, bottom: 0.74, left: 0.212, right: 0.778 },
   { file: '배경호 프로필.jpg', out: 'teacher-baekyungho.jpg', top: 0.126, bottom: 0.87, left: 0.163, right: 0.867 },
   { file: '신병철프로필.png', out: 'teacher-shinbyungchul.jpg', top: 0.122, bottom: 0.804, left: 0.107, right: 0.873 },
