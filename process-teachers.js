@@ -10,17 +10,17 @@ const OUT_W = 480, OUT_H = 600; // 4:5 portrait, consistent across all cards
 // the auto-fit step below only needs to make small adjustments.
 const photos = [
   { file: '디쌤 원장 프로필.jpg', out: 'teacher-disaem.jpg', top: 0.07, bottom: 0.88, left: 0.1635, right: 0.8115, normalize: true },
-  { file: '김진우 프로필.jpg', out: 'teacher-kimjinwoo.jpg', top: 0.128, bottom: 0.85, left: 0.144, right: 0.866 },
-  { file: '김금단 프로필.png', out: 'teacher-kimgeumdan.jpg', top: 0.235, bottom: 0.74, left: 0.212, right: 0.778 },
-  { file: '배경호 프로필.jpg', out: 'teacher-baekyungho.jpg', top: 0.126, bottom: 0.87, left: 0.163, right: 0.867 },
-  { file: '신병철프로필.png', out: 'teacher-shinbyungchul.jpg', top: 0.122, bottom: 0.804, left: 0.107, right: 0.873 },
+  { file: '김진우 프로필.jpg', out: 'teacher-kimjinwoo.jpg', top: 0.02, bottom: 0.85, left: 0.09, right: 0.92 },
+  { file: '김금단 프로필.png', out: 'teacher-kimgeumdan.jpg', top: 0.16, bottom: 0.74, left: 0.17, right: 0.82 },
+  { file: '배경호 프로필.jpg', out: 'teacher-baekyungho.jpg', top: 0.015, bottom: 0.87, left: 0.11, right: 0.92 },
+  { file: '신병철프로필.png', out: 'teacher-shinbyungchul.jpg', top: 0.02, bottom: 0.804, left: 0.05, right: 0.93 },
   { file: '안소현 프로필.jpg', out: 'teacher-ansoseon.jpg', top: 0.127, bottom: 0.64, left: 0.212, right: 0.778 },
-  { file: '최윤후 프로필.jpg', out: 'teacher-choiyoonhoo.jpg', top: 0.114, bottom: 0.777, left: 0.133, right: 0.837 },
-  { file: '조윤성 프로필.png', out: 'teacher-jhoyoonsung.jpg', top: 0.203, bottom: 0.76, left: 0.177, right: 0.803 },
+  { file: '최윤후 프로필.jpg', out: 'teacher-choiyoonhoo.jpg', top: 0.015, bottom: 0.777, left: 0.08, right: 0.89 },
+  { file: '조윤성 프로필.png', out: 'teacher-jhoyoonsung.jpg', top: 0.12, bottom: 0.76, left: 0.13, right: 0.85 },
   { file: '장효진 프로필.jpg', out: 'teacher-jangHyojin.jpg', top: 0.04, bottom: 0.75, left: 0.05, right: 0.90 },
   { file: '김정민 프로필.png', out: 'teacher-kimjeongmin.jpg', top: 0.045, bottom: 0.86, left: 0.2115, right: 0.8635 },
   { file: '박한미 프로필.jpeg', out: 'teacher-parkhanmi.jpg', top: 0.03, bottom: 0.81, left: 0.10, right: 0.90 },
-  { file: '형일우 프로필.jpg', out: 'teacher-hyungilwoo.jpg', top: 0.06, bottom: 0.61, left: 0.02, right: 0.96 },
+  { file: '형일우 프로필.jpg', out: 'teacher-hyungilwoo.jpg', top: 0.10, bottom: 0.65, left: 0.02, right: 0.96 },
 ];
 
 const targetRatio = OUT_W / OUT_H; // 0.8
