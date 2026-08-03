@@ -11,7 +11,7 @@ const OUT_W = 480, OUT_H = 600; // 4:5 portrait, consistent across all cards
 const photos = [
   { file: '디쌤 원장 프로필.jpg', out: 'teacher-disaem.jpg', top: 0.07, bottom: 0.88, left: 0.1635, right: 0.8115, normalize: true },
   { file: '김진우 프로필.jpg', out: 'teacher-kimjinwoo.jpg', top: 0.02, bottom: 0.85, left: 0.09, right: 0.92 },
-  { file: '김금단 프로필.png', out: 'teacher-kimgeumdan.jpg', top: 0.16, bottom: 0.74, left: 0.17, right: 0.82 },
+  { file: '김금단 프로필.png', out: 'teacher-kimgeumdan.jpg', top: 0.18, bottom: 0.76, left: 0.17, right: 0.82 },
   { file: '배경호 프로필.jpg', out: 'teacher-baekyungho.jpg', top: 0.015, bottom: 0.87, left: 0.11, right: 0.92 },
   { file: '신병철프로필.png', out: 'teacher-shinbyungchul.jpg', top: 0.02, bottom: 0.804, left: 0.05, right: 0.93 },
   { file: '안소현 프로필.jpg', out: 'teacher-ansoseon.jpg', top: 0.127, bottom: 0.64, left: 0.212, right: 0.778 },
