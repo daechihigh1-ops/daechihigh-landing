@@ -10,16 +10,16 @@ const OUT_W = 480, OUT_H = 600; // 4:5 portrait, consistent across all cards
 // the auto-fit step below only needs to make small adjustments.
 const photos = [
   { file: '디쌤 원장 프로필.jpg', out: 'teacher-disaem.jpg', top: 0.07, bottom: 0.88, left: 0.1635, right: 0.8115, normalize: true },
-  { file: '김진우 프로필.jpg', out: 'teacher-kimjinwoo.jpg', top: 0.05, bottom: 0.90, left: 0.15, right: 0.83 },
+  { file: '김진우 프로필.jpg', out: 'teacher-kimjinwoo.jpg', top: 0.04, bottom: 0.87, left: 0.09, right: 0.92 },
   { file: '김금단 프로필.png', out: 'teacher-kimgeumdan.jpg', top: 0.06, bottom: 0.87, left: 0.176, right: 0.824 },
-  { file: '배경호 프로필.jpg', out: 'teacher-baekyungho.jpg', top: 0.075, bottom: 0.90, left: 0.1825, right: 0.8425 },
-  { file: '신병철프로필.png', out: 'teacher-shinbyungchul.jpg', top: 0.08, bottom: 0.85, left: 0.192, right: 0.808 },
-  { file: '안소현 프로필.jpg', out: 'teacher-ansoseon.jpg', top: 0.09, bottom: 0.87, left: 0.176, right: 0.799 },
-  { file: '최윤후 프로필.jpg', out: 'teacher-choiyoonhoo.jpg', top: 0.065, bottom: 0.88, left: 0.2115, right: 0.8635 },
-  { file: '조윤성 프로필.png', out: 'teacher-jhoyoonsung.jpg', top: 0.08, bottom: 0.85, left: 0.192, right: 0.808 },
-  { file: '장효진 프로필.jpg', out: 'teacher-jangHyojin.jpg', top: 0.07, bottom: 0.82, left: 0.19, right: 0.79 },
+  { file: '배경호 프로필.jpg', out: 'teacher-baekyungho.jpg', top: 0.035, bottom: 0.89, left: 0.11, right: 0.92 },
+  { file: '신병철프로필.png', out: 'teacher-shinbyungchul.jpg', top: 0.045, bottom: 0.776, left: 0.08, right: 0.90 },
+  { file: '안소현 프로필.jpg', out: 'teacher-ansoseon.jpg', top: 0.06, bottom: 0.70, left: 0.15, right: 0.85 },
+  { file: '최윤후 프로필.jpg', out: 'teacher-choiyoonhoo.jpg', top: 0.035, bottom: 0.74, left: 0.11, right: 0.86 },
+  { file: '조윤성 프로필.png', out: 'teacher-jhoyoonsung.jpg', top: 0.12, bottom: 0.76, left: 0.13, right: 0.85 },
+  { file: '장효진 프로필.jpg', out: 'teacher-jangHyojin.jpg', top: 0.04, bottom: 0.75, left: 0.05, right: 0.90 },
   { file: '김정민 프로필.png', out: 'teacher-kimjeongmin.jpg', top: 0.045, bottom: 0.86, left: 0.2115, right: 0.8635 },
-  { file: '박한미 프로필.jpeg', out: 'teacher-parkchanmi.jpg', top: 0.09, bottom: 0.85, left: 0.196, right: 0.804 },
+  { file: '박한미 프로필.jpeg', out: 'teacher-parkchanmi.jpg', top: 0.03, bottom: 0.81, left: 0.10, right: 0.90 },
 ];
 
 const targetRatio = OUT_W / OUT_H; // 0.8
