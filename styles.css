@@ -329,8 +329,8 @@ img { max-width: 100%; display: block; }
 .director-photo-wrap {
   position: relative;
   flex: 0 0 auto;
-  width: 54%;
-  max-width: 560px;
+  width: 64%;
+  max-width: 660px;
   cursor: pointer;
   transition: transform .25s ease;
 }
@@ -348,11 +348,11 @@ img { max-width: 100%; display: block; }
   z-index: 1;
   display: block;
   width: 100%;
-  aspect-ratio: 2079 / 2350;
+  aspect-ratio: 900 / 1098;
   object-fit: cover;
-  filter: brightness(1.14) contrast(1.02) saturate(1.04);
-  -webkit-mask-image: radial-gradient(ellipse 82% 86% at 50% 46%, #000 60%, transparent 100%);
-  mask-image: radial-gradient(ellipse 82% 86% at 50% 46%, #000 60%, transparent 100%);
+  border-radius: 6px;
+  border: 1px solid rgba(201,162,75,.4);
+  box-shadow: 0 30px 70px rgba(0,0,0,.55), 0 0 0 1px rgba(0,0,0,.3);
 }
 .director-body { flex: 1 1 auto; min-width: 0; }
 .director-body h3 { font-size: 19px; font-weight: 600; color: var(--text-dim); margin: 0 0 4px; }
