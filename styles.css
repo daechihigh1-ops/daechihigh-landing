@@ -1069,7 +1069,9 @@ img { max-width: 100%; display: block; }
   border-radius: var(--radius);
   text-align: center;
 }
-.insight-article-cta h3 { font-size: 19px; margin: 0 0 22px; }
+.insight-article-cta h3 { font-size: 19px; margin: 0 0 8px; }
+.insight-article-cta-sub { font-size: 13px; color: var(--text-dim); margin: 0 0 20px; }
+.insight-article-cta .branch-picker-list { max-width: 360px; margin-left: auto; margin-right: auto; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
