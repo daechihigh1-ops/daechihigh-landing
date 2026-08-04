@@ -983,8 +983,78 @@ img { max-width: 100%; display: block; }
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
+/* ---------- Insights (학원 소식) page ---------- */
+.insights-nav-active { color: var(--gold-2); }
+.insights-hero {
+  padding: 160px 24px 60px;
+  text-align: center;
+  background: radial-gradient(ellipse at 50% 0%, rgba(201,162,75,.14), transparent 60%), var(--bg);
+}
+.insights-hero-inner { max-width: var(--max); margin: 0 auto; }
+.insights-hero h1 { font-size: clamp(28px, 4.5vw, 42px); margin: 10px 0 14px; }
+.insights-section { padding-top: 40px; }
+.insights-filter {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.insights-filter-btn {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 9px 20px;
+  cursor: pointer;
+  transition: border-color .2s ease, color .2s ease;
+}
+.insights-filter-btn:hover { color: var(--text); border-color: rgba(201,162,75,.4); }
+.insights-filter-btn.active { color: #241a05; background: linear-gradient(135deg, var(--gold-1), var(--gold-3)); border-color: transparent; }
+.insights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.insight-card {
+  display: block;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.insight-card:hover { transform: translateY(-4px); border-color: rgba(201,162,75,.4); }
+.insight-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+.insight-tag-korean { background: rgba(96,165,250,.16); color: #93c5fd; }
+.insight-tag-english { background: rgba(201,162,75,.18); color: var(--gold-1); }
+.insight-tag-math { background: rgba(248,113,113,.16); color: #fca5a5; }
+.insight-card h3 { font-size: 18px; line-height: 1.5; margin: 0 0 12px; color: var(--text); }
+.insight-loc { display: block; color: var(--text-dim); font-size: 14px; font-weight: 400; margin-top: 4px; }
+.insight-excerpt { color: var(--text-dim); font-size: 14px; line-height: 1.6; margin: 0 0 16px; }
+.insight-more { color: var(--gold-2); font-size: 14px; font-weight: 700; }
+.insights-more-link {
+  display: block;
+  text-align: center;
+  margin-top: 44px;
+  color: var(--gold-2);
+  font-weight: 700;
+  font-size: 15px;
+}
+.insights-more-link:hover { color: var(--gold-1); }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
+  .insights-hero { padding: 130px 20px 44px; }
+  .insights-grid { grid-template-columns: 1fr; }
+  .insights-filter-btn { font-size: 13px; padding: 8px 16px; }
+  .insight-card h3 { font-size: 16px; }
   .hero-grid { grid-template-columns: 1fr; text-align: center; }
   .hero-copy { max-width: 100%; margin: 0 auto; }
   .hero-mark { display: none; }
