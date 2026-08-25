@@ -11,19 +11,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.daechihigh.com/posts/elementary-math-word-problems.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.daechihigh.com/posts/junior-english-vocabulary-sentences.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.daechihigh.com/posts/high-korean-classics.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.daechihigh.com/posts/junior-math-written-solutions.html</loc>
+    <loc>https://www.daechihigh.com/posts/elementary-english-grammar-timing.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
@@ -31,27 +19,11 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.daechihigh.com/posts/high-math-wrong-answer-notes.html</loc>
+    <loc>https://www.daechihigh.com/posts/elementary-english-vocabulary-usage.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.daechihigh.com/posts/high-korean-nonfiction-reading.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.daechihigh.com/posts/junior-math-geometry-vacation.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.daechihigh.com/posts/elementary-math-transition.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.daechihigh.com/posts/junior-english-grammar-vacation.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.daechihigh.com/posts/high-english-vocabulary.html</loc>
+    <loc>https://www.daechihigh.com/posts/elementary-korean-inference.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
@@ -59,7 +31,91 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.daechihigh.com/posts/elementary-korean-vocabulary-comprehension.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/elementary-math-pacing-understanding.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/elementary-math-transition.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/elementary-math-word-problems.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/high-english-blank-inference.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/high-english-syntax-reading.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/high-english-vocabulary.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/high-korean-classics.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/high-korean-language-media.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/high-korean-nonfiction-reading.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/high-math-concept-practice-balance.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/high-math-verification-habit.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/high-math-wrong-answer-notes.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/junior-english-grammar-vacation.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/junior-english-listening.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/junior-english-vocabulary-sentences.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.daechihigh.com/posts/junior-korean-literature-nonfiction.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/junior-korean-summarizing.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/junior-korean-vocabulary-context.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/junior-math-calculation-mistakes.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/junior-math-geometry-vacation.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.daechihigh.com/posts/junior-math-written-solutions.html</loc>
     <priority>0.6</priority>
   </url>
 </urlset>
